@@ -7,3 +7,7 @@ find /etc -name file1.txt
 ```
 sudo timedatectl set-timezone America/New_York
 ```
+**Command to find a file containing specific text**
+```
+grep "text-to-find-here" /
+```
