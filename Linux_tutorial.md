@@ -9,5 +9,5 @@ sudo timedatectl set-timezone America/New_York
 ```
 **Command to find a file containing specific text**
 ```
-grep "text-to-find-here" /
+grep -r "text-to-find-here" /
 ```
