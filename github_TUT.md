@@ -1,4 +1,5 @@
 Complete Merge + Rebase Process + Delete process
+
 1- Checkout to master branch
 
 2- git merge branch name i,e git merge COL196
