@@ -11,3 +11,7 @@ sudo timedatectl set-timezone America/New_York
 ```
 grep -r "text-to-find-here" /
 ```
+**Linux Command to Check Apache Access Logs**
+```
+tail -f /var/log/apache2/access.log
+```
