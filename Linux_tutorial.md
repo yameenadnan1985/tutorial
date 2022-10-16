@@ -47,7 +47,7 @@ service apache2 status
 ```
 ifconfig
 ```
-**Command to check Linux version**
+**Check version**
 ```
 cat /etc/os-release
 lsb_release -a
