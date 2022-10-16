@@ -37,3 +37,9 @@ tar -xvf html.tar
 zip html.zip html
 unzip html.zip
 ```
+**service**
+```
+service apache2 start
+service apache2 stop
+service apache2 status
+```
