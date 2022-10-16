@@ -15,3 +15,11 @@ grep -r "text-to-find-here" /
 ```
 tail -f /var/log/apache2/access.log
 ```
+**Create blank empty file**
+```
+touch test.txt
+```
+**See large file with scrolling**
+```
+cat /boot/grub/grub.cfg | less
+```
