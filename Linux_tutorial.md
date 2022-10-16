@@ -23,3 +23,7 @@ touch test.txt
 ```
 cat /boot/grub/grub.cfg | less
 ```
+**To get help use**
+```
+man <command>
+```
