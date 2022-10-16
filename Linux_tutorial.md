@@ -27,3 +27,13 @@ cat /boot/grub/grub.cfg | less
 ```
 man <command>
 ```
+***tar command to zip/unzip**
+```
+tar -cvf html.tar html
+tar -xvf html.tar
+```
+**zip command to zip/unzip**
+```
+zip html.zip html
+unzip html.zip
+```
