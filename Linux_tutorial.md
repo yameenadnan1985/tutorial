@@ -19,7 +19,7 @@ tail -f /var/log/apache2/access.log
 ```
 touch test.txt
 ```
-**See large file with scrolling**
+**See large file with scrolling. Enter or space keys could be use**
 ```
 cat /boot/grub/grub.cfg | less
 ```
