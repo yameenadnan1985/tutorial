@@ -53,3 +53,11 @@ cat /etc/os-release
 lsb_release -a
 hostnamectl
 ```
+**Add command output to a file**
+```
+# This command will append to file
+echo "This is Adnan" >> test.txt
+
+# This command will remove all previous data and will insert new data in file
+echo "This is Adnan" > test.txt
+```
