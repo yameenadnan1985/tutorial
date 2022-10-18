@@ -73,3 +73,7 @@ i
 # To escape from insert mode press scape and then press :wq
 Esc > :wq
 ```
+**Nano Editor**
+```
+nano test.txt
+```
