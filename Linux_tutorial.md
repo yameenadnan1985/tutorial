@@ -64,4 +64,12 @@ echo "This is Adnan" > test.txt
 **VIM Editor**
 ```
 vi test.txt
+# To quit editor without saving
+:q!
+# To quit editor with saving
+:wq
+# To add data in editor press i and then press enter
+i
+# To escape from insert mode press scape and then press :wq
+Esc > :wq
 ```
