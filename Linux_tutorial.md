@@ -74,6 +74,9 @@ i
 Esc > :wq
 # To find text
 /text_to_search
+# To find next text
+/text_to_search
+and hit enter and then press "n" or "N"
 ```
 **Nano Editor**
 ```
