@@ -1,4 +1,4 @@
-Complete Merge + Rebase Process + Delete process
+**Complete Merge + Rebase Process + Delete process**
 
 1- Checkout to master branch
 
