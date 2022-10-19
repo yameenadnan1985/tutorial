@@ -72,6 +72,8 @@ vi test.txt
 i
 # To escape from insert mode press scape and then press :wq
 Esc > :wq
+# To find text
+/text_to_search
 ```
 **Nano Editor**
 ```
