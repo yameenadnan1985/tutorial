@@ -81,7 +81,7 @@ and hit enter and then press "n" or "N"
 
 # Find and replace
 :%s/old_word/new_word/gC
-# in next screen if you will select y, it will replace all occurances. If you will select "a" then it will replace occurances one by one
+# In next screen if you will select "y", it will replace occurances one by one. If you will select "a" it will replace all occurances.
 ```
 **Nano Editor**
 ```
