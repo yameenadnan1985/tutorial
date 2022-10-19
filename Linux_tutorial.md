@@ -80,7 +80,7 @@ Esc > :wq
 and hit enter and then press "n" or "N"
 
 # Find and replace
-:%s/text_to_find/text_to_replace/g
+:%s/old_word/new_word/g
 ```
 **Nano Editor**
 ```
