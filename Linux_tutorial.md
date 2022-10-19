@@ -72,11 +72,15 @@ vi test.txt
 i
 # To escape from insert mode press scape and then press :wq
 Esc > :wq
+
 # To find text
 /text_to_search
 # To find next text
 /text_to_search
 and hit enter and then press "n" or "N"
+
+# Find and replace
+:%s/text_to_find/text_to_replace/g
 ```
 **Nano Editor**
 ```
