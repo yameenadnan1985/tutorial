@@ -97,5 +97,5 @@ less file_path
 ls /etc/apache2/sites-available/
 less /etc/apache2/sites-available/default-ssl.conf
 a2ensite default-ssl.conf
-service apache2 restart
+systemctl reload apache2
 ```
