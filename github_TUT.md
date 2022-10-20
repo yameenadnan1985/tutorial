@@ -15,3 +15,8 @@
 7- git stash
 
 8- git stash apply
+
+**Remove a git commit which has not been pushed**
+```
+git reset HEAD~1
+```
