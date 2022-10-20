@@ -87,3 +87,15 @@ and hit enter and then press "n" or "N"
 ```
 nano test.txt
 ```
+**To see file page by page**
+```
+less file_path
+```
+**Enable SSL Certificate**
+```
+# System restart required
+ls /etc/apache2/sites-available/
+less /etc/apache2/sites-available/default-ssl.conf
+a2ensite default-ssl.conf
+service apache2 restart
+```
