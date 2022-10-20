@@ -95,7 +95,7 @@ less file_path
 ```
 # System restart required
 ls /etc/apache2/sites-available/
-less /etc/apache2/sites-available/default-ssl.conf
+000-default.conf  default-ssl.conf
 a2ensite default-ssl.conf
 systemctl reload apache2
 ```
