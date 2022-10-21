@@ -20,3 +20,11 @@
 ```
 git reset HEAD~1
 ```
+**See specific commit and revert it**
+```
+git checkout master
+git log
+# It will show a list of all commits
+git show 1fb6b315a741520cdb1cb986ad25d2d8954481ef
+git revert 1fb6b315a741520cdb1cb986ad25d2d8954481ef
+```
