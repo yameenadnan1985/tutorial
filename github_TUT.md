@@ -28,3 +28,7 @@ git log
 git show 1fb6b315a741520cdb1cb986ad25d2d8954481ef
 git revert 1fb6b315a741520cdb1cb986ad25d2d8954481ef
 ```
+**Get list of all modified files after specific date**
+```
+git log --since="2021-10-21" --name-only --pretty=format: | sort > changed-files.txt
+```
