@@ -32,3 +32,13 @@ git revert 1fb6b315a741520cdb1cb986ad25d2d8954481ef
 ```
 git log --since="2021-10-21" --name-only --pretty=format: | sort > changed-files.txt
 ```
+**Take all the files modified on certain date**
+```
+If you use TortoiseGIt, it provides this too.
+Choose the folder, in explorer
+Right click,Choose menu, TortoiseGit-> Show Log.
+
+Select working directory and the last commiitted version.
+Right click. Compare revisions. Select files you want to save/export.
+Right Click. Export to folder. Done.
+```
