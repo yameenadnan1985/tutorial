@@ -1,3 +1,7 @@
+**What is Docker**
+```
+Docker is open platform for developers to build, ship and run containerized applications. 
+```
 **Container**
 
 ```
