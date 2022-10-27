@@ -16,7 +16,7 @@ https://www.youtube.com/watch?v=M_XM0XxdVS4&list=PL8p2I9GklV45jJzLsexf2_hNNafpCX
 https://www.youtube.com/watch?v=kiH88gENxZM&list=PLe30vg_FG4OSCTUv3XIkwH--cK2D7rfJJ&index=4
 ```
 
-**Install Laravel**
+**Install Specific Laravel Version**
 ```
 Installing specific version of laravel in specific directory using composer
 composer create-project laravel/laravel:7.* ./
@@ -30,22 +30,26 @@ To install laravel in current directory
 composer create-project laravel/laravel ./
 ```
 
-Artisan Commands
-To get php artisan command help
+**Important Artisan Commands**
+```
 php artisan serve
+
+# To get php artisan command help
 php artisan help make:controller
+
 php artisan make:controller welcomeController –plain
 php artisan make:model ModelName
 php artisan make:migration
-If you want to see list of routes
+php artisan make:middleware MiddlewareName
+# If you want to see list of routes
 php artisan route:list
-php artisan storage:link	// Create symbolic link
-	
+# Create symbolic link
+php artisan storage:link	
+```	
 
-
-Install Authentication Package
-
-Before installing authentication package you need to install node js
+**Install Authentication Package**
+```
+# Before installing authentication package you need to install node js
 
 composer create-project laravel/laravel:”7.*” ./
 composer require laravel/ui:”2.*”
@@ -54,26 +58,37 @@ php artisan ui  bootstrap
 npm install
 npm run dev
 php artisan migrate
+```
 
-Authentication package details:
+**Authentication package:**
+```
 @auth	=	Check if user is logged in or not
 auth()->user()->update(array);	// To update authenticated user
+```
 
-
-		Connect to Database
+**Connect to Database**
+```
 connect to db by entering credentials in .env and config/database.php
+```
 
-
-
-Migrations
-Migrations are version control of your database
-
+**Migrations**
+```
 Create new table using migration
 php artisan make:migration create_articles_table –create=”articles”
+```
 
-Modify table using migration
-php artisan make:migration add_new_column_to_articles_table –table=”articles”
-
+**Modify table using migration before production**
+```
+**Step 1: **php artisan migrate:rollback
+**Step 2: **Make change in migration files inside database/migrations/
+**Step 3: **php artisan migrate
+```
+**Modify table using migration after production**
+```
+Step 1: php artisan make:migration add_new_column_to_articles_table –table=”articles”
+Step 2: Make change in migration files inside database/migrations/
+Example: 
+```
 Delete all tables to add new column
 If you want to add new column to table and not care about data then run command below
 php artisan migrate:fresh // Drop all tables and recreate
