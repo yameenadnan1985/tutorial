@@ -1,14 +1,4 @@
-**Basics to learn any language any framework**
-```
-Any language/framework: 
-Basic (loop, ifelse, string, datetime)
-Crud
-Fileupload
-Read Excel
-Write PDF
-Localization
-Regular expressions
-```
+**Larvel**
 
 **Good Videos:**
 ```
@@ -16,18 +6,18 @@ https://www.youtube.com/watch?v=M_XM0XxdVS4&list=PL8p2I9GklV45jJzLsexf2_hNNafpCX
 https://www.youtube.com/watch?v=kiH88gENxZM&list=PLe30vg_FG4OSCTUv3XIkwH--cK2D7rfJJ&index=4
 ```
 
-**Install Specific Laravel Version**
+**Display Error**
 ```
-Installing specific version of laravel in specific directory using composer
-composer create-project laravel/laravel:7.* ./
-// =7.*		=	Version number
-./		=	Current directory
-```
+APP_ENV=local	
+# This will enable error view
 
-**Install Latest version of Laravel**
-```
-To install laravel in current directory
-composer create-project laravel/laravel ./
+APP_ENV=production 
+# This will disable error view
+
+Config/app.php	
+'debug' => env(false),
+
+dd($name);
 ```
 
 **Important Artisan Commands**
@@ -45,7 +35,26 @@ php artisan make:middleware MiddlewareName
 php artisan route:list
 # Create symbolic link
 php artisan storage:link	
-```	
+```
+
+**Install Specific Laravel Version**
+```
+Installing specific version of laravel in specific directory using composer
+composer create-project laravel/laravel:7.* ./
+// =7.*		=	Version number
+./		=	Current directory
+```
+
+**Install Latest version of Laravel**
+```
+To install laravel in current directory
+composer create-project laravel/laravel ./
+```
+
+**Connect to Database**
+```
+connect to db by entering credentials in .env and config/database.php
+```
 
 **Install Authentication Package**
 ```
@@ -66,39 +75,46 @@ php artisan migrate
 auth()->user()->update(array);	// To update authenticated user
 ```
 
-**Connect to Database**
-```
-connect to db by entering credentials in .env and config/database.php
-```
-
 **Migrations**
 ```
 Create new table using migration
 php artisan make:migration create_articles_table –create=”articles”
 ```
 
-**Modify table using migration before production**
+**migration - Modify table before production**
 ```
-**Step 1: **php artisan migrate:rollback
-**Step 2: **Make change in migration files inside database/migrations/
-**Step 3: **php artisan migrate
+Step 1: php artisan migrate:rollback
+Step 2: Make change in migration files inside database/migrations/
+Step 3: php artisan migrate
 ```
-**Modify table using migration after production**
+
+**migration - Modify table after production**
 ```
 Step 1: php artisan make:migration add_new_column_to_articles_table –table=”articles”
-Step 2: Make change in migration files inside database/migrations/
+Step 2: Make change to migration files inside database/migrations/
+
 Example: 
+function up() {
+	$table->string("body")->nullable();
+}
+function down() {
+	$table->dropColumn("body");
+}
+Step 3: php artisan migrate
 ```
-Delete all tables to add new column
-If you want to add new column to table and not care about data then run command below
+
+**Migration - Reset all table**
+```
 php artisan migrate:fresh // Drop all tables and recreate
 or  
 php artisan migrate:refresh // reset and rerun all migrations
 This command will drop all the tables and recreate the tables.
+```
 
-migration bugs
+**migration bug**
+```
 php artisan migrate
-If receive error do this
+In case of error:
 Edit the database.php file in config folder.
 
 'charset' => 'utf8mb4',
@@ -108,23 +124,26 @@ to
 
 'charset' => 'utf8',
 'collation' => 'utf8_unicode_ci',
+```
+
+**Any language basics for learning getting job**
+```
+Any language/framework: 
+Basic (loop, ifelse, string, datetime)
+Crud
+Fileupload
+Read Excel
+Write PDF
+Localization
+Regular expressions
+```
 
 
 
+	
 
-Display Error
 
-Much cleaner way to replace var_dump (To figure out reason of error)
-dd($name);   // die and dump
-At the top dd($name) contains which file was effected so that we can diagnose the class
-Enable/Disable Error Display in Laravel:
-Rename env.example to env if already have env do this
-APP_ENV=local	
-// This will enable error view
-APP_ENV=production 
-// This will disable error view
-Config/app.php	
-'debug' => env(false),
+
 
 
 
