@@ -10,23 +10,25 @@ Localization
 Regular expressions
 ```
 
+**Good Videos:**
+```
 https://www.youtube.com/watch?v=M_XM0XxdVS4&list=PL8p2I9GklV45jJzLsexf2_hNNafpCXw9k&index=6
-
-Good Videos:
 https://www.youtube.com/watch?v=kiH88gENxZM&list=PLe30vg_FG4OSCTUv3XIkwH--cK2D7rfJJ&index=4
+```
 
-
-When you have to commit changes to github ignore these
-/vendor
-.env
-Install Laravel
+**Install Laravel**
+```
 Installing specific version of laravel in specific directory using composer
 composer create-project laravel/laravel:7.* ./
 // =7.*		=	Version number
 ./		=	Current directory
+```
 
+**Install Latest version of Laravel**
+```
 To install laravel in current directory
 composer create-project laravel/laravel ./
+```
 
 Artisan Commands
 To get php artisan command help
@@ -535,3 +537,7 @@ Step 4:
 public function method($lang) {
 	App::setlocal($lang);
 }
+
+When you have to commit changes to github ignore these
+/vendor
+.env
