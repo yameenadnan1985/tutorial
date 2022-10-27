@@ -42,3 +42,7 @@ Select working directory and the last commiitted version.
 Right click. Compare revisions. Select files you want to save/export.
 Right Click. Export to folder. Done.
 ```
+**If have more than 1 github accounts**
+```
+https://stackoverflow.com/questions/21160774/github-error-key-already-in-use
+```
