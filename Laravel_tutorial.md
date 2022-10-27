@@ -1,4 +1,5 @@
-**Create new laravel Project**
+**Basics to learn any language any framework**
+```
 Any language/framework: 
 Basic (loop, ifelse, string, datetime)
 Crud
@@ -7,7 +8,7 @@ Read Excel
 Write PDF
 Localization
 Regular expressions
-
+```
 
 https://www.youtube.com/watch?v=M_XM0XxdVS4&list=PL8p2I9GklV45jJzLsexf2_hNNafpCXw9k&index=6
 
