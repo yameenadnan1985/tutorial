@@ -388,6 +388,9 @@ php artisan make:middleware CustomMiddleWare
 Step 2:
 # Add rules in middleware
 # Important here is $request object
+public function handle(Request $request, Closure $next) {
+
+}
 if ( $request->url(‘/store’) ) {
 	// Add validation rules for store
 } elseif ($request->url(‘update’)) {
