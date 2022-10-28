@@ -400,9 +400,8 @@ if ( $request->url(‘/store’) ) {
 Step 3:  
 # Add entry in \App\Http\kernel.php like below be careful of path when adding in kernel.php and controller.php	
 protected $routeMiddleware = [
-'store' => \App\Http\Middleware\authStore::class,
+'authStore' => \App\Http\Middleware\authStore::class,
 ];
-# Above line mean when user go to route 'store' first check validation rules from authStore middleware 
 
 Step 4:
 # Create constructor in controller for which you created middleware e.g
@@ -411,7 +410,7 @@ class userController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('FormValidation',['only' => 'store']);
+        $this->middleware('authStore');
     }
 }
 ```
