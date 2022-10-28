@@ -184,6 +184,71 @@ $article->body = ‘body’;
 $article->save();
 ```
 
+**Model $fillable**
+```
+In model we add this
+protected $fillable = [
+	‘title’,
+	‘body’,
+];
+
+And in controller if we do like 
+$data = [
+	‘title’		=>	‘This is title’,
+	‘body’		=>	‘This is body’,
+	‘password’	=>	‘password’
+];
+Article::create($data);
+It will insert only title and body and will ignore password
+
+If I want all fields to be fillable without mass assignment then I can do
+protected guarded = [];
+```
+
+**Model $hidden**
+```
+If you want to remove fields like password in Article::all(); then in model add this
+protected $hidden [
+	‘password’,
+	‘created_at’
+]
+```
+
+**Model Accessor/Mutator**
+```
+# Mutator:
+# Inside model create a function like below
+# function setDBFieldNameAttribute ($DBFieldName) {
+	$this->attributes['dbfieldname'] = bcrypt($dbfieldname);
+}
+function setPasswordAttribute ($password) {	
+	$this->attributes[‘password’] = bcrypt($password);
+}
+
+So now if you will do like this in controller it will encrypt the password and insert in DB
+$data = [
+	‘title’		=>	‘This is title’,
+	‘body’		=>	‘This is body’,
+	‘password’	=>	 ‘password’
+];
+Article::create($data);
+
+
+
+Accessor:
+Inside model create a function like below
+function getTitleAttribute ($title) {	
+	return ‘My title is: ’ . ucfirst($title);
+}
+
+In controller
+$article = Article::all();
+# it will return "My title is: Yameen Adnan"
+return $article;
+```
+
+
+
 **Any language basics for learning getting job**
 ```
 Any language/framework: 
@@ -196,83 +261,13 @@ Localization
 Regular expressions
 ```
 
-Another short way to insert user
 
-
-Mass assignment:
-In model we add this
-protected $fillable = [
-	‘title’,
-	‘body’,
-];
-
-And in controller if we do like 
-
-$data = [
-	‘title’			=>	‘This is title’,
-	‘body’		=>	‘This is body’,
-	‘password’	=>	‘password’
-];
-Article::create($data);
-It will insert only title and body and will ignore password
-
-If I want all fields to be fillable without mass assignment then I can do
-
-protected guarded = [];
-
-Update:
-Façade: Use façade approach to update user in which do not initialize user/we do not create object
-Article::where(‘id’, 3)->update([‘name’ => ‘Test’, ‘Age’ => 45] );
-Article
 
 To encrypt password use 
 $article->password = bcrypt(‘mypassword’);
 
-If you want to remove fields like password in Article::all(); then in model add this
-
-protected $hidden [
-	‘password’,
-	‘created_at’
-]
-
-$article->delete()->where(‘id’, 2);
 
 
-
-Accessor and mutator:
-
-Mutator:
-
-Inside model create a function like below
-function setPasswordAttribute ($password) {
-	
-	$this->attributes[‘password’] = bcrypt($password);
-
-}
-
-So now if you will do like this in controller it will encrypt the password and insert in DB
-
-$data = [
-	‘title’		=>	‘This is title’,
-	‘body’		=>	‘This is body’,
-	‘password’	=>	 ‘password’
-];
-Article::create($data);
-
-Accessor:
-
-Inside model create a function like below
-function getTitleAttribute ($title) {
-	
-	return ‘My name is: ’ . ucfirst($title);
-
-}
-
-In controller
-
-$article = App\Article::all();
-
-return $article;
 
 	
 
