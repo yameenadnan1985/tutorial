@@ -205,6 +205,7 @@ If I want all fields to be fillable without mass assignment then I can do
 protected guarded = [];
 ```
 
+
 **Model $hidden**
 ```
 If you want to remove fields like password in Article::all(); then in model add this
@@ -213,6 +214,7 @@ protected $hidden [
 	‘created_at’
 ]
 ```
+
 
 **Model Accessor/Mutator**
 ```
@@ -247,6 +249,7 @@ $article = Article::all();
 return $article;
 ```
 
+
 **Modal - $dates**
 ```
 # To convert any date field to be istance of Carbon do this
@@ -255,6 +258,7 @@ protected $dates [
 'date_of_birth'
 ];
 ```
+
 
 **Views**
 ```
@@ -375,7 +379,9 @@ return redirect()->back();
 // rest of all code.
 ```
 
+
 **Middleware**
+```
 Step 1:
 php artisan make:middleware CustomMiddleWare
 
@@ -424,6 +430,7 @@ function edit ($id) {
 
 ```
 
+
 **Upload**
 ```
 $request->file(‘myfile’);
@@ -457,12 +464,14 @@ After form submission redirect back to form page
 return redirect()->back();
 ```
 
+
 **session**
 ```
 After session()->put(‘message’, ‘This is test’);
 If ( session()->has(‘message’) )
 session()->get(‘message’)
 ```
+
 
 **Encrypt password**
 ```
@@ -475,6 +484,7 @@ $data = [
 Article::create($data);
 ```
 
+
 **Datetime**
 ```
 carbon (library):
@@ -482,6 +492,7 @@ Carbon is a laravel library that comes up with laravel install
 
 $now = Carbon\Carbon::now();
 ```
+
 
 **Localization**
 ```
@@ -536,6 +547,7 @@ When you have to commit changes to github ignore these
 .env
 ```
 
+
 **tinker**
 ```
 php artisan tinker
@@ -545,6 +557,7 @@ $article->title = ‘Another test’;
 $article_array = $article->toArray();
 $article->save();
 ```
+
 
 **namespace**
 ```
