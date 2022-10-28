@@ -398,14 +398,20 @@ if ( $request->url(‘/store’) ) {
 }
 
 Step 3:  
-# Add entry in \App\Http\kernel.php like below be careful of path when adding in kernel.php and controller.php	
+# Add entry in \App\Http\kernel.php like below be careful of path when adding in kernel.php and controller.php
+# This file contains 2 types of variables
+# This applies to all routes
+protected $middleware = [];
+
+# This applies to specific routes
+protected $routeMiddleware = [];
+
 protected $routeMiddleware = [
 'authStore' => \App\Http\Middleware\authStore::class,
 ];
 
 Step 4:
 # Create constructor in controller for which you created middleware e.g
-
 class userController extends Controller
 {
     public function __construct()
