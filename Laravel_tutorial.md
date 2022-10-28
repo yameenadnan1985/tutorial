@@ -247,57 +247,29 @@ $article = Article::all();
 return $article;
 ```
 
-
-
-**Any language basics for learning getting job**
+**Modal - $dates**
 ```
-Any language/framework: 
-Basic (loop, ifelse, string, datetime)
-Crud
-Fileupload
-Read Excel
-Write PDF
-Localization
-Regular expressions
+# To convert any date field to be istance of Carbon do this
+protected $dates [
+'published_at',
+'date_of_birth'
+];
 ```
 
-
-
-To encrypt password use 
-$article->password = bcrypt(‘mypassword’);
-
-
-
-
-	
-
-
-
-
-
-
-Routes
-routes/web.php file contains routing information
-Routes::get(‘/’,’WelcomeController@index’);
-
-Controllers
-Controllers Resides inside app\Http\Controllers
-php artisan make:controller welcomeController --plain;
-$data = [];
-$data[‘name’] = ‘Adnan’;
-Passing data to view
-return view (‘welcome’,$data);
-
-Views
+**Views**
+```
 resources\views
 In controller you can use 
 return view(‘welcome’);	
 // Which is equal to welcome.blade.php
 {{  $name }}			
 // Will display value of variable
+
 {{ !!$name }}			
 // This will display $name + will run html characters on page
+
 Example: $name = ‘<span style=”color:red;”>Yameen Adnan</span>’
+
 {{  $name }} = <span style=”color:red;”>Yameen Adnan</span>
 {{  !!$name }} = Yameen Adnan
 <a href=”{{ url(‘/article’,$article->id) }}”>Yameen Adnan</span>
@@ -306,7 +278,6 @@ Blade Engine
 @extends(“layout.app”)		
 // This is a bit like include or require
 template.blade.php or layout.blade.php or master.blade.php
-
 <html>
 	<head>
 		<title></title>
@@ -319,7 +290,7 @@ template.blade.php or layout.blade.php or master.blade.php
 	</body>
 </html>
 
-// To add csrf to page do this
+// To add csrf to page add only @csrf
 @csrf
 
 child.blade.php
@@ -349,68 +320,31 @@ This test content section. This is CNN test section
 @endforeach
 </ul>
 
-
-
-
-
-
-
-
 and it will show like My name is: Adnan
 
-tinker
-
-php artisan tinker
-
-$article = new App\Article;
-
-$article->title = ‘test’;
-
-$article->title = ‘Another test’;
-
-$article_array = $article->toArray();
-
-$article->save();
+# Include view or Subview
+@include(‘layout.app’)	
+# it will look for file inside views/layout/app.blade.php
+```
 
 
+**Controllers**
+```
+app\Http\Controllers
+php artisan make:controller welcomeController --plain;
+$data = [];
+$data[‘name’] = ‘Adnan’;
 
+#Passing data to view
+return view (‘welcome’,$data);
 
-
-Install 3rd party packages
-
-composer require Package Name
-
-Example:
-composer require laravel/ui
-
-When we will add this package and go to command prompt and do like
-
-
-
-
-
-
-
-Datetime
-carbon (library):
-Carbon is a laravel library that comes up with laravel install
-
-$now = Carbon\Carbon::now();
-
-Redirect to specific page:
-
+# Redirect to specific page
 return redirect(‘articles’);
+```
 
 
-Why use namespace:
-If we add two classes with same name…it will give fatal error
-
-To avoid this we use name space
-
-
-
-Form Validation
-// Validation rules
+**Form validation**
+```
 $validation_rules = [
 ‘name’	=>	‘required|max:255’,	
 ‘email’	=>	‘required|unique:manage_users’,
@@ -426,40 +360,41 @@ Validation rules apply in sequence it is given
 $errors->all() will return an array containing all errors
 
 
-
-
 Custom error messages
-$rules = [
+$validation_rules = [
 ‘title’ => ‘required|max:255’
 ];
 
 $messages = [
-‘title.required’ => ‘My custom error message’,
-‘title.max’ => ‘My custom max error message’
+‘title.required’ => ‘My dear must add title’,
+‘title.max’ => ‘My dear do not exceed 255 characters’
 ];
-$validatr = Validator::make ($request->all(), $rules, $messages);
+$validatr = Validator::make ($request->all(), $validation_rules, $messages);
 If ($validatr->fails())
 return redirect()->back();
 // rest of all code.
-Middleware
+```
 
-Step 1
+**Middleware**
+Step 1:
 php artisan make:middleware CustomMiddleWare
 
-Important here is $request object
-
-Step 2   // Add rules in middleware
+Step 2:
+# Add rules in middleware
+# Important here is $request object
 if ( $request->url(‘/store’) ) {
 	// Add validation rules for store
 } elseif ($request->url(‘update’)) {
 	// Add validation rules for store
 }
 
-Step 3  // Add entry in \App\Http\kernel.php like below be careful of path when adding in kernel.php and controller.php	
+Step 3:  
+# Add entry in \App\Http\kernel.php like below be careful of path when adding in kernel.php and controller.php	
 
 'FormValidation' => \App\Http\Middleware\FormValidationRules::class,
 
-Step 4 // Create constructor in controller for which you created middleware e.g
+Step 4:
+# Create constructor in controller for which you created middleware e.g
 
 class userController extends Controller
 {
@@ -468,11 +403,29 @@ class userController extends Controller
         $this->middleware('FormValidation',['only' => 'store']);
     }
 }
+```
 
 
+**Routes**
+```
+routes/web.php file contains routing information
+Routes::get(‘/’,’WelcomeController@index’);
 
-Image Handling
+# Dynamic route parameter
+@ article/{id}/edit
+So it can be 
+article/1/edit
+article/2/edit
+article/3/edit and so on
 
+function edit ($id) {
+	echo ‘ID of article to edit is: ‘ . $id
+}
+
+```
+
+**Upload**
+```
 $request->file(‘myfile’);
 
 Check if someone submitted the form after selecting the file.
@@ -486,9 +439,6 @@ $request->file(‘myfile’)->storeAs(‘path’, ‘fileName’,’public’);
 
 Get file name of client
 $request->file(‘myfile’)->getClientOriginalName();
-
-
-
 
 Access uploaded images:
 // To show the image inside storage directory I need to create symbolic link
@@ -505,42 +455,45 @@ Open filesysystem inside config and see disks >> public
 redirect
 After form submission redirect back to form page
 return redirect()->back();
+```
 
-Session
+**session**
+```
 After session()->put(‘message’, ‘This is test’);
 If ( session()->has(‘message’) )
 session()->get(‘message’)
+```
 
+**Encrypt password**
+```
+To encrypt password:
+$data = [
+'title'		=>	'First title',
+'body'		=>	'First body',
+'password'	=>	bcrypt(‘mypassword’),
+];
+Article::create($data);
+```
 
-Include view or Subview
-@include(‘layout.app’)	
-// it will look for file inside views/layout/app.blade.php
+**Datetime**
+```
+carbon (library):
+Carbon is a laravel library that comes up with laravel install
 
+$now = Carbon\Carbon::now();
+```
 
+**Localization**
+```
+Step1: 
+# In view add like {{ __(‘profile.welcome’) }}	
+# Here profile is the name of directory and fname is array key
 
-
-
-
-Dynamic route parameter
-@ article/{id}/edit
-So it can be 
-article/1/edit
-article/2/edit
-article/3/edit and so on
-
-function edit ($id) {
-	echo ‘ID of article to edit is: ‘ . $id
-}
-
-
-
-Localization
-Step1: In view add like {{ __(‘profile.welcome’) }}	
-// Here profile is the name of directory and fname is array key
-
-Step2: Create folder/file in inside resources lang like
-en/profile.php // Here profile is used in __(‘profile.welcome’)
+Step2: 
+# Create folder/file inside resources lang like
+en/profile.php 
 hi/profile.php
+# Here profile is used in __(‘profile.welcome’)
 
 Step3: 
 en/profile.php contains
@@ -561,11 +514,54 @@ To set dynamic
 routes/web.php 
 route::get(‘/profile/{lang}’,’controller@method’);
 
-Step 4:
+Step 5:
 public function method($lang) {
 	App::setlocal($lang);
 }
+```
 
+
+**Install 3rd party packages**
+```
+composer require Package Name
+Example:
+composer require laravel/ui
+```
+
+
+**github**
+```
 When you have to commit changes to github ignore these
 /vendor
 .env
+```
+
+**tinker**
+```
+php artisan tinker
+$article = new App\Article;
+$article->title = ‘test’;
+$article->title = ‘Another test’;
+$article_array = $article->toArray();
+$article->save();
+```
+
+**namespace**
+```
+Why use
+If we add two classes with same name…it will give fatal error
+To avoid this we use name space
+```
+
+
+**Any language basics for learning getting job**
+```
+Any language/framework: 
+Basic (loop, ifelse, string, datetime)
+Crud
+Fileupload
+Read Excel
+Write PDF
+Localization
+Regular expressions
+```
