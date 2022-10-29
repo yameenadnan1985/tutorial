@@ -203,7 +203,14 @@ Article::create($data);
 It will insert only title and body and will ignore password
 
 If I want all fields to be fillable without mass assignment then I can do
-protected guarded = [];
+protected $guarded = [];
+```
+
+
+**Model $guarded**
+```
+$guarded = ['name', 'email'];
+# It means we want to ignore only name & email we don't want to insert values of name & email colmn
 ```
 
 
