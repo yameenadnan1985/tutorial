@@ -30,6 +30,7 @@ php artisan help make:controller
 php artisan make:controller welcomeController –plain
 php artisan make:model ModelName
 php artisan make:migration
+php artisan make:seeder
 php artisan make:middleware MiddlewareName
 # If you want to see list of routes
 php artisan route:list
@@ -587,4 +588,13 @@ Read Excel
 Write PDF
 Localization
 Regular expressions
+```
+
+**Seeder**
+```
+Step 1:
+php artisan make:seeder TableNameTableSeeder
+# Convention TableName, Table, Seeder
+# Example: ArticlesTableSeeder
+# A new file created inside database/seeds
 ```
