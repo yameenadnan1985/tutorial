@@ -608,7 +608,7 @@ public function run() {
 
 # In run() method of DatabaseSeeder.php add this line
 public function run () {
-	$this->call(ArticlesTableSeeder::class);
+	$this->call([ArticlesTableSeeder::class]);
 }
 
 ```
