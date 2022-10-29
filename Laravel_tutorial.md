@@ -597,4 +597,12 @@ php artisan make:seeder TableNameTableSeeder
 # Convention TableName, Table, Seeder
 # Example: ArticlesTableSeeder
 # A new file created inside database/seeds
+# open ArticlesTableSeeder.php in editor and in run method add insert statement in run method
+# Example
+public function run() {
+DB::table('articles')->insert([
+'title' => 'page1',
+'body'	=> 'Article body'	
+]);
+}
 ```
