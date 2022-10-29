@@ -600,9 +600,15 @@ php artisan make:seeder TableNameTableSeeder
 # open ArticlesTableSeeder.php in editor and in run method add insert statement in run method
 # Example
 public function run() {
-DB::table('articles')->insert([
-'title' => 'page1',
-'body'	=> 'Article body'	
-]);
+	DB::table('articles')->insert([
+		'title' => 'page1',
+		'body'	=> 'Article body'	
+	]);
 }
+
+# In run() method of DatabaseSeeder.php add this line
+public function run () {
+	$this->call(ArticlesTableSeeder::class);
+}
+
 ```
