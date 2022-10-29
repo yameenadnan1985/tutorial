@@ -594,21 +594,28 @@ Regular expressions
 ```
 Step 1:
 php artisan make:seeder TableNameTableSeeder
-# Convention TableName, Table, Seeder
-# Example: ArticlesTableSeeder
+# Convention TableName, Table, Seeder. Example: ArticlesTableSeeder
+Step 2:
 # A new file created inside database/seeds
 # open ArticlesTableSeeder.php in editor and in run method add insert statement in run method
-# Example
+# Example, note 2 arrays
 public function run() {
 	DB::table('articles')->insert([
+	[
 		'title' => 'page1',
 		'body'	=> 'Article body'	
+	]
 	]);
 }
-
+Step 3:
 # In run() method of DatabaseSeeder.php add this line
 public function run () {
 	$this->call([ArticlesTableSeeder::class]);
 }
 
+Step 4:
+composer dump-autoload
+
+Step 5:
+php artisan db:seed
 ```
