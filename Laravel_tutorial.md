@@ -239,6 +239,27 @@ protected $guarded = [];
 ```
 
 
+**Model - one to many**
+```
+# User has multiple articles
+# Article belong to one user
+# User model
+# get all of the articles of user: $user->articles
+public function articles () {
+	$this->hasMany('App\Article');
+}
+
+
+#flip side article belong to user
+# Get user who created the article $article->user
+
+
+public function user () {
+	$this->belongsTo('App\Article');
+}
+```
+
+
 **Model $guarded**
 ```
 $guarded = ['name', 'email'];
@@ -627,24 +648,4 @@ Read Excel
 Write PDF
 Localization
 Regular expressions
-```
-
-**Model one to many**
-```
-# User has multiple articles
-# Article belong to one user
-# User model
-# get all of the articles of user: $user->articles
-public function articles () {
-	$this->hasMany('App\Article');
-}
-
-
-#flip side article belong to user
-# Get user who created the article $article->user
-
-
-public function user () {
-	$this->belongsTo('App\Article');
-}
 ```
