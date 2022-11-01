@@ -503,6 +503,38 @@ function edit ($id) {
 ```
 
 
+**Scheduler in Laravel**
+```
+Step 1:
+php artisan make:command TestCron --command=test:cron
+
+Step 2:
+Go insde app/console/commands/ and open TestCron.php
+Add your function value inside handle ()
+public function handle () {
+	// write my function
+}
+
+
+Step 3:
+Open app/console/kernel.php and add your function insdie $commands array
+Example:
+protected $commands = [
+	Commands\TestCron::class,
+];
+and modify schedule function
+Example:
+protected function schedule (Schedule $schedule) {
+	$schedule->command('test:cron')->hourly();
+	// dalyAt('13:00'); etc
+}
+
+Step 4:
+php artisan schedule:run
+```
+
+
+
 **Upload**
 ```
 $request->file(‘myfile’);
