@@ -217,27 +217,6 @@ $article->body = ‘body’;
 $article->save();
 ```
 
-**Model $fillable**
-```
-In model we add this
-protected $fillable = [
-	‘title’,
-	‘body’,
-];
-
-And in controller if we do like 
-$data = [
-	‘title’		=>	‘This is title’,
-	‘body’		=>	‘This is body’,
-	‘password’	=>	‘password’
-];
-Article::create($data);
-It will insert only title and body and will ignore password
-
-If I want all fields to be fillable without mass assignment then I can do
-protected $guarded = [];
-```
-
 
 **Model - one to many**
 ```
@@ -257,6 +236,28 @@ public function articles () {
 public function user () {
 	$this->belongsTo('App\Article');
 }
+```
+
+
+**Model $fillable**
+```
+In model we add this
+protected $fillable = [
+	‘title’,
+	‘body’,
+];
+
+And in controller if we do like 
+$data = [
+	‘title’		=>	‘This is title’,
+	‘body’		=>	‘This is body’,
+	‘password’	=>	‘password’
+];
+Article::create($data);
+It will insert only title and body and will ignore password
+
+If I want all fields to be fillable without mass assignment then I can do
+protected $guarded = [];
 ```
 
 
