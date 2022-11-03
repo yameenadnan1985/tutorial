@@ -44,8 +44,8 @@ php artisan storage:link
 https://laravel.com/docs/5.5#server-requirements
 
 Installing specific version of laravel in specific directory using composer
-composer create-project laravel/laravel:7.* ./
-// =7.*		=	Version number
+composer create-project laravel/laravel:5.5 ./
+// =5.5		=	Version number
 ./		=	Current directory
 ```
 
