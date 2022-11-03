@@ -40,6 +40,9 @@ php artisan storage:link
 
 **Install Specific Laravel Version**
 ```
+# To check php and compatible version go here
+https://laravel.com/docs/5.5#server-requirements
+
 Installing specific version of laravel in specific directory using composer
 composer create-project laravel/laravel:7.* ./
 // =7.*		=	Version number
