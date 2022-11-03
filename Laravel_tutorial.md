@@ -285,7 +285,7 @@ protected $hidden [
 ```
 # Mutator:
 # Inside model create a function like below
-# function setDBFieldNameAttribute ($DBFieldName) {
+# Convention set, DBFieldName, Attribute ($DBFieldName) {
 	$this->attributes['dbfieldname'] = bcrypt($dbfieldname);
 }
 function setPasswordAttribute ($password) {	
