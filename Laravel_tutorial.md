@@ -448,7 +448,8 @@ return redirect()->back();
 **Middleware**
 ```
 Step 1:
-php artisan make:middleware CustomMiddleWare
+php artisan make:middleware AuthUser
+# This will create a new file inside app\Http\Middleware\AuthUser
 
 Step 2:
 # Add rules in middleware
