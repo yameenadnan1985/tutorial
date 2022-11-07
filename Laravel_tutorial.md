@@ -248,7 +248,7 @@ public function up() {
 	$table->foreign('user_id') // Foreign key.
 	->references('id') 	   // Primary key of parent table.
 	->on('userrs')    	   // Parent table name.
-	->onDelete('casCade');
+	->onDelete('cascade');
 }
 ```
 
