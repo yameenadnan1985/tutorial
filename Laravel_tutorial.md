@@ -247,7 +247,8 @@ public function up() {
 	# If you also want to delete all articles when a user deleted then add.
 	$table->foreign('user_id') // Foreign key.
 	->references('id') 	   // Primary key of parent table.
-	->on('userrs');    	   // Parent table name.
+	->on('userrs')    	   // Parent table name.
+	->onDelete('casCade');
 }
 ```
 
