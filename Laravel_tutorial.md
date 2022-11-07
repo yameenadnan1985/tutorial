@@ -223,6 +223,7 @@ $article->save();
 
 **Model - one to many**
 ```
+# STEP 1: Add two functions as below
 # User has multiple articles
 # Article belong to one user
 # User model
@@ -231,13 +232,22 @@ public function articles () {
 	$this->hasMany('App\Article');
 }
 
-
-#flip side article belong to user
+# Flip side article belong to user
 # Get user who created the article $article->user
-
 
 public function user () {
 	$this->belongsTo('App\Article');
+}
+
+STEP 2: Add foreign key in article
+Go to database/migration/CreateArticlesTable.php
+public function up() {
+	$table->integer('user_id')->nullable();
+	
+	# If you also want to delete all articles when a user deleted then add.
+	$table->foreign('user_id') // Foreign key.
+	->references('id') 	   // Primary key of parent table.
+	->on('userrs');    	   // Parent table name.
 }
 ```
 
