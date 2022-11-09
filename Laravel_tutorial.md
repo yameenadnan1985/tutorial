@@ -253,6 +253,52 @@ public function up() {
 ```
 
 
+**Model - Many to Many**
+```
+https://www.youtube.com/watch?v=nE129JewqbU
+1 category belong to many posts, 1 post belong to many category
+
+# Step 1:
+php artissan make:model Post
+php artisan make:model Category
+
+# Step 2:
+php artisan make:migration create_posts_table --create="posts"
+// and add columns as required
+php artisan make:migration create_categories_table --create="categories"
+// and add columns as required
+
+// Create pivote table
+// Convention: create_alphabateLow_alphabateHigh_table
+// Use singular word.
+Example:
+php artisan make:migration create_category_post_table --create="category_post"
+
+# Step 3:
+open category_post file and modify up method
+public function up () {
+	Schema::create('category_post', function (Blueprint $table) {
+		$table->integer('category_id')->unsigned();
+		$table->integer('post_id')->unsigned();
+		
+		$table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+		$table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+	});
+}
+
+# Step 4:
+open Category.php model and write 
+public function posts () {
+	$this->belongstoMany('App\Post');
+}
+open Post.php model and write 
+public function categories () {
+	$this->belongstoMany('App\Category');
+}
+
+```
+
+
 **Model $fillable**
 ```
 In model we add this
