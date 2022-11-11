@@ -27,4 +27,16 @@ and download it menually, unzip it and go inside test folder and copy and paste 
 once copied go inside test directory and run this command ../../vendor/bin/phpunit and hit enter, you should see test results
 ```
 
+
 **How to write tests**
+```
+Inside tests directory create new file with class name "welcome_test"
+Example:
+Class  Welcome_test {
+  publilic function test_index () {
+    // This line sends a get request to index method of welcome controller and get the output
+    $output = $this->request('GET', 'welcome/index');
+    $this->assertContains ('<title>Welcome to Codeigniter</title>', $output);
+  }
+}
+```
