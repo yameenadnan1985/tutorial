@@ -99,3 +99,12 @@ ls /etc/apache2/sites-available/
 a2ensite default-ssl.conf
 systemctl reload apache2
 ```
+**Display single quote ' in awk print**
+```
+$ mysql -ucolibri -pcolibri -hdb < tmp.txt | grep "DB_" | awk '{print "USE "$1";SELECT \047student_id\047  FROM students;"}' > output.txt
+$ cat output.txt
+USE DB_S16010701;SELECT 'student_id'  FROM students;
+USE DB_S22120101;SELECT 'student_id'  FROM students;
+USE DB_S22121301;SELECT 'student_id'  FROM students;
+USE DB_S22122002;SELECT 'student_id'  FROM students;
+```
