@@ -15,6 +15,10 @@ grep -r "text-to-find-here" /
 ```
 tail -f /var/log/apache2/access.log
 ```
+**Check Apache Access Logs of specific IP/Website**
+```
+tail -f /var/log/apache2/access.log | grep "129.168.0.1"
+```
 **Create blank empty file**
 ```
 touch test.txt
