@@ -23,6 +23,18 @@ or
 $ docker image ls
 ```
 
+**Create image from Dockerfile**
+```
+# Go to directory where docker file is located and run this command
+$ docker build -t ImageName
+# This will build an image from Dockerfile. If you want to run docker image frist list image by using this command
+$ docker images
+# Take the ID of image you want to run and use this command
+# Syntax is 
+$ docker run image-ID e.g
+$ docker run 35fg435dhdh3563
+```
+
 **To stop and start docker containers do this**
 ```
 $ docker stop Container-ID
