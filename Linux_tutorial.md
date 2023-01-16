@@ -7,6 +7,7 @@ grep -i "Test" /etc/os-release #Will search case in sensitive
 grep -w "Test" /etc/os-release #Will return exact text i,e it will NOT search "Testing"
 grep -win -C 2 "Test" /etc/os-release #It will show text matches plus two lines up and 2 lines down
 grep -wirl "Test" /etc/ #l will not show the line number but only show the files which contain desired text
+grep -wirc "Test" /etc/ #c will number of times a text found
 ```
 
 **Command to find a file with specific name**
