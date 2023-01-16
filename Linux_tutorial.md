@@ -8,6 +8,7 @@ grep -w "Test" /etc/os-release #Will return exact text i,e it will NOT search "T
 grep -win -C 2 "Test" /etc/os-release #It will show text matches plus two lines up and 2 lines down
 grep -wirl "Test" /etc/ #l will not show the line number but only show the files which contain desired text
 grep -wirc "Test" /etc/ #c will number of times a text found
+history | grep "mysqladmin" #This will return history but only lines which have text "mysqladmin"
 ```
 
 **Command to find a file with specific name**
