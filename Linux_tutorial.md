@@ -11,6 +11,14 @@ grep -wirc "Test" /etc/ #c will number of times a text found
 history | grep "mysqladmin" #This will return history but only lines which have text "mysqladmin"
 ```
 
+
+**grep with regular expression**
+```
+grep -r "...-...-..." /var/www/html
+grep -r -P "\d{3}-\d{3}-\d{4}" /var/www/html
+```
+
+
 **Command to find a file with specific name**
 ```
 find /etc -name file1.txt
