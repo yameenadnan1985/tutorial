@@ -1,6 +1,7 @@
 **Command to find a file containing specific text**
 ```
 grep -r "text-to-find-here" /
+cat /etc/os-release | grep OS    # This will show only line containing OS
 ```
 
 **Command to find a file with specific name**
