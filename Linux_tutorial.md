@@ -3,6 +3,7 @@
 grep -r "text-to-find-here" /
 grep -n "Test" /etc/os-release #Will return line number
 grep -c "Test" /etc/os-release #Will return total number of text appear
+grep -i "Test" /etc/os-release #Will search case in sensitive
 ```
 
 **Command to find a file with specific name**
