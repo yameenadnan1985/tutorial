@@ -45,10 +45,18 @@ $ docker run -i -t image_name bash
 
 **DELETE DOCKER image(s)/container(s)**
 ```
+# Image
 $ docker rmi <your-image-id> <your-image-id>
-
 # Remove all images at once
 $ docker rmi $(docker images -q)
+
+
+# Container
+$ docker rm <your-container-id>
+# Stop all containers
+$ docker stop $(docker ps -a -q)
+# Remove all stopped containers
+$ docker rm $(docker ps -a -q)
 ```
 
   
