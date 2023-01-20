@@ -33,6 +33,9 @@ $ docker images
 # Syntax is 
 $ docker run image-ID e.g
 $ docker run 35fg435dhdh3563
+
+# TO RUN DOCKER CONTAINER ALL TIMES DO THIS
+$ docker run -i -t image_name bash
 ```
 
 **To stop and start docker containers do this**
