@@ -26,8 +26,8 @@ $ docker image ls
 **Create image from Dockerfile**
 ```
 # Go to directory where docker file is located and run this command
-$ docker build -t ImageName
-# This will build an image from Dockerfile. If you want to run docker image frist list image by using this command
+$ docker build -t ImageName .
+# Please note dot "'" at the end of above command. This indicates that Dockerfile exists in current directory. This will build an image from Dockerfile. If you want to run docker image frist list image by using this command
 $ docker images
 # Take the ID of image you want to run and use this command
 # Syntax is 
