@@ -38,6 +38,11 @@ $ docker run 35fg435dhdh3563
 $ docker run -i -t image_name bash
 ```
 
+**TO RUN DOCKER CONTAINER ALL TIMES DO THIS**
+```
+$ docker run -i -t image_name bash
+```
+
 **To stop and start docker containers do this**
 ```
 $ docker stop Container-ID
@@ -58,9 +63,4 @@ $ docker run -p3307:3306 mysql-server
 **Trouble shoot why some docker command not running**
 ```
 $ docker logs container-ID
-```
-
-**TO RUN DOCKER CONTAINER ALL TIMES DO THIS**
-```
-$ docker run -i -t image_name bash
 ```
