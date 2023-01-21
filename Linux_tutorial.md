@@ -134,3 +134,9 @@ USE DB_S22120101;SELECT 'student_id'  FROM students;
 USE DB_S22121301;SELECT 'student_id'  FROM students;
 USE DB_S22122002;SELECT 'student_id'  FROM students;
 ```
+
+**INSTALL sudo PACKAGE**
+```
+apt update
+apt install sudo
+```
