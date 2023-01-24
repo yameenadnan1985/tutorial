@@ -5,6 +5,7 @@ Docker is open platform for developers to build, ship and run containerized appl
 
 **Container**
 ```
+container = object of class
 # To check all running containers
 $ docker ps 
 
@@ -18,6 +19,7 @@ $ docker containers -a
 
 **To Check all images use this command**
 ```
+image = template or class
 $ docker images
 or 
 $ docker image ls
