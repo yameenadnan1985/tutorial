@@ -64,10 +64,15 @@ $ docker rm $(docker ps -a -q)
 
 **Docker pull/push on/from [hub.docker.com](https://hub.docker.com/)**
 ```
-1- Login docker
-docker login --username=yameen671
-2- It will ask for password, provide password
-3- 
+Login docker. It will ask for password, provide password
+$ docker login --username=yameen671
+
+#Push image/repository to docker hub
+# docker tag LocalRepository:LocalTag username/RemoteRepository:RemoteTag
+$ docker tag colibri:latest yameen671/colibri:latest
+
+#Pull image/repository from docker hub
+docker pull yameen671/colibri:latest
 ```
 
 
