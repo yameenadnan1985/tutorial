@@ -140,3 +140,17 @@ USE DB_S22122002;SELECT 'student_id'  FROM students;
 apt update
 apt install sudo
 ```
+
+
+**Redirect from http to https**
+```
+/etc/apache2/sites-available/000-default.conf
+
+Content should be:
+
+<VirtualHost *:80>
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+</VirtualHost>
+```
