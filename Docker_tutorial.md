@@ -69,7 +69,8 @@ Login docker. It will ask for password, provide password
 $ docker login --username=yameen671
 
 #Push image/repository to docker hub
-# docker tag LocalRepository:LocalTag username/RemoteRepository:RemoteTag
+$ docker tag LocalRepository:LocalTag username/RemoteRepository:RemoteTag
+$docker push LocalRepository:LocalTag
 $ docker tag colibri:latest yameen671/colibri:latest
 
 #Pull image/repository from docker hub
