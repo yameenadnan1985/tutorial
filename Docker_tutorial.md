@@ -43,8 +43,7 @@ $ docker run -i -t image_name bash
 **TO RUN DOCKER CONTAINER ALL TIMES DO THIS**
 ```
 $ docker run -i -t image_name bash
-$ docker run -d -p 80:80 docker/getting-started
-$ docker run -itd -p 80:80 yameen671/colibri
+$ docker run -it -p 80:80 yameen671/colibri
 ```
 
 **DELETE DOCKER image(s)/container(s)**
