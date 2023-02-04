@@ -83,6 +83,9 @@ docker pull yameen671/colibri:latest
 $ docker ps -a
 $ docker start Container-ID
 $ docker exec -it <container name> /bin/bash
+# Example: 
+$ docker start a2e445d73f3c
+$ docker exec -it agitated_spence /bin/bash
 ```
 
 **To pull image and run container do this**
