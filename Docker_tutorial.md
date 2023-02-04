@@ -84,6 +84,11 @@ $ docker stop Container-ID
 $ docker start Container-ID
 ```
 
+**To stop and start docker containers do this**
+```
+docker exec -it <container name> /bin/bash
+```
+
 **To pull image and run container do this**
 ```
 $ docker run ubuntu:20.04
