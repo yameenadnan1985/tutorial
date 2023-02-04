@@ -88,6 +88,13 @@ $ docker start a2e445d73f3c
 $ docker exec -it agitated_spence /bin/bash
 ```
 
+**Copy data between host and container**
+```
+ $ docker container cp CONTAINER:SRC_PATH DEST_PATH|-
+ $ docker cp host container:destination
+```
+
+
 **To pull image and run container do this**
 ```
 $ docker run ubuntu:20.04
