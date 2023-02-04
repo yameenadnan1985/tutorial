@@ -88,6 +88,11 @@ $ docker start a2e445d73f3c
 $ docker exec -it agitated_spence /bin/bash
 ```
 
+**Run docker with server files**
+```
+docker run -it -p 80:80 --rm -v C:\xampp\htdocs\colibri:/var/ yameen671/colibri /bin/bash
+```
+
 **Copy data between host and container**
 ```
  $ docker container cp CONTAINER:SRC_PATH DEST_PATH|-
