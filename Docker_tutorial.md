@@ -78,15 +78,11 @@ docker pull yameen671/colibri:latest
 ```
 
 
-**To stop and start docker containers do this**
+**Start docker containers and get inside container**
 ```
-$ docker stop Container-ID
+$ docker ps -a
 $ docker start Container-ID
-```
-
-**To stop and start docker containers do this**
-```
-docker exec -it <container name> /bin/bash
+$ docker exec -it <container name> /bin/bash
 ```
 
 **To pull image and run container do this**
