@@ -88,7 +88,7 @@ $ docker start a2e445d73f3c
 $ docker exec -it agitated_spence /bin/bash
 ```
 
-**Run docker with server files**
+**Run docker with HOST files**
 ```
 docker run -it -p 80:80 --rm -v C:\xampp\htdocs\colibri:/var/ yameen671/colibri /bin/bash
 ```
