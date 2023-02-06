@@ -37,3 +37,11 @@ $ mysqladmin create ads_school;
 $ mysql ads_master < ads_master;
 $ mysql ads_school < ads_school;
 ````
+
+**Set master admin**
+```
+# Open apps.config.php and add
+define('MASTER_ADMIN_DOMAIN', 'localhost');
+# Go to browser and type http://localhost.
+# This will run master admin on your local machine
+```
