@@ -1,3 +1,4 @@
+To follow steps i assume you already have installed/configured docker
 **Pull image and start docker from image**
 ```
 $ docker login 
