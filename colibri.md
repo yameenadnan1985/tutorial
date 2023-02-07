@@ -18,6 +18,7 @@ $ docker exec -it -p 80:80 8794c8a8a5d7 /bin/bash
 **After container start from image**
 ```
 $ apt install php7.0
+$ apt install vim
 $ echo "127.0.0.1 db" >> /etc/hosts
 $ service apache2 restart
 ```
