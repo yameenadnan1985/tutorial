@@ -90,7 +90,7 @@ $ docker exec -it agitated_spence /bin/bash
 
 **Run docker with HOST files**
 ```
-docker run -it -p 80:80 --rm -v C:\xampp\htdocs\colibri:/var/ yameen671/colibri /bin/bash
+docker run -it -p 80:80 --name colibri -v C:\xampp\htdocs\Grindyzer\data\www:/var/ yameen671/colibri /bin/bash
 ```
 
 **Copy data between host and container**
