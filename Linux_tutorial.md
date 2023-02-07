@@ -154,3 +154,29 @@ Content should be:
     RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
 </VirtualHost>
 ```
+
+**  Create Virtual Host e.g localhost and localhost.master**
+```
+$ sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/localhost.master.conf
+
+$ vi /etc/apache2/sites-available/localhost.master.conf
+
+# Add these details:
+
+<VirtualHost *:80>
+    ServerAdmin admin@localhost.master
+    ServerName localhost.master
+    ServerAlias www.localhost.master
+    DocumentRoot /var/www/test.com/public_html
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+$ sudo a2ensite localhost.master.conf
+
+# disable the default site defined in 000-default.conf
+
+$ sudo a2dissite 000-default.conf
+
+$ sudo service apache2 restart
+```
