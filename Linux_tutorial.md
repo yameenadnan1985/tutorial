@@ -180,3 +180,12 @@ $ sudo a2dissite 000-default.conf
 
 $ sudo service apache2 restart
 ```
+
+**bz2 uncompress**
+```
+# To compress a file with bz2 extension
+bzip2 -z filename
+
+# To Uncompress bz2 extension
+bzip2 -d DB_S21091901_20221022.sql.bz2
+```
