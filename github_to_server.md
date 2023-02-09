@@ -6,6 +6,6 @@
 
 **How to setup**
 ```
-# Go to your github repo and click actions
+# Go to your github repo and click actions and click on " set up a workflow yourself"
 
 ```
