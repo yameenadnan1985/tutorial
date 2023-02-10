@@ -1,21 +1,19 @@
-name: Upload complete repo to a SFTP destination
-
-on: 
+name: "Upload complete repo to a SFTP destination"
+on:
   push:
     branches:[main]
 jobs:
-  deploy:
+  deploy-via-sftp:
     runs-on: [ubuntu-latest]
     steps:
       - name: "Get latest code"
         uses: actions/checkout@v2
 
-      - name: SFTP uploader                       # Upload to SFTP 
+      - name: "SFTP uploader" 
         uses: wangyucode/sftp-upload-action@v1.4.8
         with:	
           server: ${{ secrets.DEV_HOST }}
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           forceUpload: true
-          localDir: './*'
+          localDir: '.'
           remoteDir: '/var/www/html/'
-          exclude: '.git*,.DS_Store'
