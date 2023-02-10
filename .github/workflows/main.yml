@@ -4,10 +4,10 @@ on:
   push:
     branches:[main]
 jobs:
-  Upload-to-SFTP:
+  deploy:
     runs-on: [ubuntu-latest]
     steps:
-      - name: Get latest code                     	# Checkout the latest code
+      - name: "Get latest code"
         uses: actions/checkout@v2
 
       - name: SFTP uploader                       # Upload to SFTP 
