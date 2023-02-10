@@ -1,7 +1,7 @@
 name: Upload complete repo to a SFTP destination
 
 on: 
-	push:branches:[main]
+	push:branches:main
 
 jobs:
   Upload-to-SFTP:
