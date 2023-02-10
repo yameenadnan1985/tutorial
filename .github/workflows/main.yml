@@ -14,6 +14,5 @@ jobs:
         with:	
           server: ${{ secrets.DEV_HOST }}
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          forceUpload: true
           localDir: '.'
           remoteDir: '/var/www/html/'
