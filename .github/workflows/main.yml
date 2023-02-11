@@ -12,7 +12,7 @@ jobs:
       - name: "SFTP uploader" 
         uses: github/upload-files@v3
         with:	
-          server: ${{ secrets.DEV_HOST }}
+          sftp-server: ${{ secrets.DEV_HOST }}
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           localDir: '.'
           remoteDir: '/var/www/html/'
