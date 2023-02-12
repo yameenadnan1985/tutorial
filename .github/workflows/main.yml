@@ -11,7 +11,7 @@ jobs:
     - name: 📂 Sync Files
       uses: SamKirkland/web-deploy@v1
       with:
-        target-server: "138.197.175.222"
+        target-server: "138.197.161.147"
         remote-user: "root"
         private-ssh-key: "-----BEGIN OPENSSH PRIVATE KEY-----
 b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
@@ -52,4 +52,4 @@ sT7L7vXPvHFgdYGX5i+/VAq74NXth37ssNzaWuEnlD7ohgyRPd6f1NkDQcTfP2Mk4uaKOA
 XqYZ3of3luPGRFLwAAABRkZWxsQERFU0tUT1AtSDlQVkowMgECAwQF
 -----END OPENSSH PRIVATE KEY-----
 "
-        destination-path: "/var/test/"
+        destination-path: "/var/www/html/"
