@@ -13,5 +13,5 @@ jobs:
       with:
         target-server: "138.197.161.147"
         remote-user: "root"
-        private-ssh-key: ${{ secrets.PRIVATE_SSH_KEY }}
+        private-ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
         destination-path: "/var/www/html/"
