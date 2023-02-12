@@ -14,4 +14,4 @@ jobs:
         target-server: ${{ secrets.DEV_HOST }}
         remote-user: root
         private-ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
-        destination-path: /root/
+        destination-path: /var/www/html/
