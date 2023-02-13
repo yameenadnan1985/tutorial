@@ -1,5 +1,7 @@
-on: push
-name: "Publish Website1"
+on: 
+  push:
+    branches: [main]
+name: "Publish Website"
 jobs:
   web-deploy:
     name: 🚀 Deploy Website Every Commit
