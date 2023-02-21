@@ -1,7 +1,9 @@
 **Github to Server**
 **Good Video**
 ```
-[https://www.youtube.com/watch?v=eQpIomFi2uM](https://www.youtube.com/watch?v=DufTz_ShMVw)
+
+https://www.youtube.com/watch?v=H6UU7TsyrGs&t=322s
+
 ```
 
 **How to setup**
