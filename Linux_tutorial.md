@@ -189,3 +189,8 @@ bzip2 -z filename
 # To Uncompress bz2 extension
 bzip2 -d DB_S21091901_20221022.sql.bz2
 ```
+
+**Get Users List**
+```
+cat /etc/passwd
+```
