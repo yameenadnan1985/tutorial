@@ -15,6 +15,15 @@ $ touch post-receive
 $ vi post-receive
 # Inside file put this content
 
+
+
+#!/bin/sh
+# checkout files
+git --work-tree=C:\xampp\htdocs\Grindyzer\data\www --git-dir=/var/www/html/grindyzer.git checkout -f
+
+
+# Save the file and never forget to give it executable permissions
+$ chmod +x post-receive
 ```
 
 **Code for main.yml**
