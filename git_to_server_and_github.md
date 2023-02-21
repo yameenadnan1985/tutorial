@@ -1,14 +1,19 @@
 **Github to Server**
 **Good Video**
 ```
-
 https://www.youtube.com/watch?v=H6UU7TsyrGs&t=322s
-
 ```
 
-**How to setup**
+**Setup git on server**
 ```
-# Go to your github repo and click actions and click on "set up a workflow yourself"
+# Login to SSH Server and go to location where you want to deploy your files.
+$ cd /var/www/html/
+$ git init --bare grindyzer.git
+$ cd grindyzer.git/hooks/
+# Create new files inside hooks
+$ touch post-receive
+$ vi post-receive
+# Inside file put this content
 
 ```
 
