@@ -24,27 +24,10 @@ git --work-tree=C:\xampp\htdocs\Grindyzer\data\www --git-dir=/var/www/html/grind
 
 # Save the file and never forget to give it executable permissions
 $ chmod +x post-receive
-```
 
-**Code for main.yml**
-```
-on: 
-  push:
-    branches: [main]
-name: "Publish Website1"
-jobs:
-  web-deploy:
-    name: 🚀 Deploy Website Every Commit
-    runs-on: ubuntu-latest
-    steps:
-    - name: 🚚 Get Latest Code
-      uses: actions/checkout@v3
-    
-    - name: 📂 Sync Files
-      uses: SamKirkland/web-deploy@v1
-      with:
-        target-server: "138.197.161.147"
-        remote-user: "root"
-        private-ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
-        destination-path: "/var/www/html/"
+# Now go to your local system and type
+$ git remote add dev root@138.197.161.147:/var/www/html/grindyzer.git
+$ git push -u dev master
+# For next time
+$ git push dev master
 ```
