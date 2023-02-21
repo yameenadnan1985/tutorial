@@ -1,4 +1,4 @@
-**Github to Server**
+**Git to Server**
 **Good Video**
 ```
 https://www.youtube.com/watch?v=H6UU7TsyrGs&t=322s
