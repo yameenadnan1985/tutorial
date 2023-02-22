@@ -32,3 +32,8 @@ git push -u dev master
 # For next time
 git push dev master
 ```
+
+**Get list of remote servers**
+```
+git remote -v
+```
