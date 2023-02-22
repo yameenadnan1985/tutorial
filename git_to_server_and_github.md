@@ -45,5 +45,5 @@ git remote add dev root@138.197.161.147:/var/www/html/.git
 
 **Remote server**
 ```
-git remote remote dev
+git remote remove dev
 ```
