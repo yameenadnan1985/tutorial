@@ -46,3 +46,8 @@ Right Click. Export to folder. Done.
 ```
 https://stackoverflow.com/questions/21160774/github-error-key-already-in-use
 ```
+
+**Git get list of remote Servers**
+```
+git remote -v
+```
