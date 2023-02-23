@@ -28,7 +28,7 @@ chmod +x post-receive
 # Now go to your local system and type
 git remote add dev root@138.197.161.147:/var/www/html/.git
 # branch in local git repo and branch in remote git repo must match.
-git push -u dev master
+git push --set-upstream dev master
 # For next time
 git push dev master
 ```
