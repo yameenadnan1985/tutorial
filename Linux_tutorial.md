@@ -194,3 +194,10 @@ bzip2 -d DB_S21091901_20221022.sql.bz2
 ```
 cat /etc/passwd
 ```
+
+**Linux command to get size of directory**
+```
+du -sh dir
+Example:
+du -sh html
+```
