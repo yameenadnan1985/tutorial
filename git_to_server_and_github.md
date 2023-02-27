@@ -33,6 +33,13 @@ git push --set-upstream dev master
 git push dev master
 ```
 
+**Save "Specific Local Directory" into the "Root Directory" of remote server**
+```
+// git subtree push --prefix directory_name remote_server_name remote_branch 
+Example:
+git subtree push --prefix www dev master
+```
+
 **Get list of remote servers**
 ```
 git remote -v
