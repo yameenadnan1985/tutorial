@@ -40,6 +40,14 @@ Example:
 git subtree push --prefix www dev master
 ```
 
+**Subtree Slow**
+```
+git subtree split --rejoin --prefix Sub_Directory Last_Commit
+Example:
+git subtree split --rejoin --prefix data/www 385f4e878f930358ee1caf44f0adbe43f5ca2238
+```
+
+
 **Get list of remote servers**
 ```
 git remote -v
