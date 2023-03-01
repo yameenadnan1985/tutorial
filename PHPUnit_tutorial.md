@@ -9,7 +9,8 @@ https://www.youtube.com/watch?v=ZtCkSG90mV8
 **Install PHPUnit**
 ```
 Step 1:
-Go to http://phpunit.de and check phpunit version compatible with your PHP version once you find the compatible version copy the composer command and go to root directory or directory containing application directory and run the command.
+Go to http://phpunit.de and check phpunit version compatible with your PHP version once you find the compatible 
+version copy the composer command and go to root directory or directory containing application directory and run the command.
 
 Example: composer require --dev phpunit/phpunit ^6
 
