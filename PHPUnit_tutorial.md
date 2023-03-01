@@ -26,7 +26,7 @@ Create "tests" folder inside "applications" folder and
 Go to this URL
 https://github.com/kenjis/ci-phpunit-test/releases
 
-and download it menually, unzip it and go inside test folder and copy and paste all contents 
+and download release v0.16.1, unzip it and go inside tests folder and copy and paste all contents 
 from ci-phpunit-test to applications/tests/
 
 once copied go inside tests directory and run this command 
