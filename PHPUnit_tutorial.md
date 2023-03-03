@@ -52,4 +52,7 @@ Class  Welcome_test {
 ** How to fix "Exception: Serialization of 'Closure' is not allowed"**
 ```
 https://github.com/kenjis/ci-phpunit-test/issues/90
+
+https://github.com/kenjis/ci-phpunit-test/tree/v0.6.1
+
 ```
