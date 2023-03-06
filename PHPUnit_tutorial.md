@@ -32,6 +32,7 @@ once copied go inside tests directory and run this command
 and hit enter, you should see test results
 ```
 
+
 **How to fix "Exception: Serialization of 'Closure' is not allowed"**
 ```
 open applications/schools/tests/phpunit.xml and change 
@@ -42,15 +43,18 @@ https://github.com/kenjis/ci-phpunit-test/issues/90
 https://github.com/kenjis/ci-phpunit-test/tree/v0.6.1
 ```
 
+
 **How to write tests**
 ```
-Inside tests directory create new file with class name "welcome_test"
+Go inside tests/controllers directory create new file with same name as controller name and append it with name test
 Example:
-Class  Welcome_test {
-  publilic function test_index () {
-    // This line sends a get request to index method of welcome controller and get the output
-    $output = $this->request('GET', 'welcome/index');
-    $this->assertContains ('<title>Welcome to Codeigniter</title>', $output);
-  }
+For controller name Dashboard.php, create file (Dashboard_test.php) inside applications/schools/tests/controllers
+
+And create a class "Dashboard_test" which extends "TestCase" like below
+class Dashboard_test extends TestCase{
+}
+
+For each method of Dashboard.php controller write this
+public function test_MethodName() {
 }
 ```
