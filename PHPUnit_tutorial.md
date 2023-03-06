@@ -32,7 +32,7 @@ once copied go inside tests directory and run this command
 and hit enter, you should see test results
 ```
 
-** How to fix "Exception: Serialization of 'Closure' is not allowed"**
+**How to fix "Exception: Serialization of 'Closure' is not allowed"**
 ```
 open applications/schools/tests/phpunit.xml and change 
 backupGlobals="true" to backupGlobals="false"
