@@ -28,7 +28,8 @@ and download release v0.16.1, unzip it and go inside ci-phpunit-test-0.16.1/appl
 and paste all contents from ci-phpunit-test-0.16.1/application/tests/ to applications/schools/tests/
 
 once copied go inside tests directory and run this command 
-./phpunit and hit enter, you should see test results
+./phpunit 
+and hit enter, you should see test results
 ```
 
 ** How to fix "Exception: Serialization of 'Closure' is not allowed"**
