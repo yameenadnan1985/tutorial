@@ -58,3 +58,12 @@ For each method of Dashboard.php controller write this
 public function test_MethodName() {
 }
 ```
+
+**Famous test methods**
+```
+Provide method name i,e GET OR POST and controller and method name in array
+$output = $this->request('GET', ['registration', 'index']);
+
+assertTrue() either contains value of true or false
+$this->assertTrue(true);
+```
