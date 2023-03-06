@@ -14,26 +14,31 @@ and check phpunit version compatible with your PHP version once you find the com
 version copy the composer command and go to root directory or directory containing application directory 
 and run the command.
 
-Example: composer require --dev phpunit/phpunit ^6
+wget -O phpunit https://phar.phpunit.de/phpunit-6.phar
+chmod +x phpunit
 
-To verify if PHPUnit is installed successfully go to your root directory where vendor and application 
-folders are and in command line type /vendor/bin/phpunit -version
-It should return the phpunit version
+To verify if PHPUnit is installed successfully type command below
+./phpunit --version
+and it should give some output
 
 Step 2:
-Create "tests" folder inside "applications" folder and
-
-# Setup ci-phpunit-test
-Go to this URL
+Create "tests" folder inside "applications/schools" folder and go to this URL
 https://github.com/kenjis/ci-phpunit-test/releases
-
-and download release v0.16.1, unzip it and go inside ci-phpunit-test-0.16.1/application/tests folder and copy and paste all contents 
-from ci-phpunit-test-0.16.1/application/tests/ to applications/tests/
+and download release v0.16.1, unzip it and go inside ci-phpunit-test-0.16.1/application/tests folder and copy and paste all contents from ci-phpunit-test-0.16.1/application/tests/ to applications/schools/tests/
 
 once copied go inside tests directory and run this command 
-../../vendor/bin/phpunit and hit enter, you should see test results
+./phpunit and hit enter, you should see test results
 ```
 
+** How to fix "Exception: Serialization of 'Closure' is not allowed"**
+```
+open applications/schools/tests/phpunit.xml and change 
+backupGlobals="true" to backupGlobals="false"
+
+Further explanation here:
+https://github.com/kenjis/ci-phpunit-test/issues/90
+https://github.com/kenjis/ci-phpunit-test/tree/v0.6.1
+```
 
 **How to write tests**
 ```
@@ -46,13 +51,4 @@ Class  Welcome_test {
     $this->assertContains ('<title>Welcome to Codeigniter</title>', $output);
   }
 }
-```
-
-
-** How to fix "Exception: Serialization of 'Closure' is not allowed"**
-```
-https://github.com/kenjis/ci-phpunit-test/issues/90
-
-https://github.com/kenjis/ci-phpunit-test/tree/v0.6.1
-
 ```
