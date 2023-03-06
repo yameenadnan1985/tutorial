@@ -66,6 +66,7 @@ $output = $this->request('GET', ['registration', 'index']);
 
 assertTrue() either contains value of true or false
 $this->assertTrue(true);
+$this->assertEqual();
 ```
 
 **If you want method name without test appended**
