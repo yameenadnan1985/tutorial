@@ -67,3 +67,12 @@ $output = $this->request('GET', ['registration', 'index']);
 assertTrue() either contains value of true or false
 $this->assertTrue(true);
 ```
+
+**If you want method name without test appended**
+```
+/*
+@test
+public function checkDuplicate() {
+}
+*/
+```
