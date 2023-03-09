@@ -32,6 +32,10 @@ once copied go inside tests directory and run this command
 and hit enter, you should see test results
 ```
 
+**PHP_UNIT Tutorial Documentation link**
+```
+https://github.com/kenjis/ci-phpunit-test/blob/v0.16.0/docs/HowToWriteTests.md
+```
 
 **How to fix "Exception: Serialization of 'Closure' is not allowed"**
 ```
