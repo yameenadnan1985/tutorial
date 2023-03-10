@@ -201,3 +201,5 @@ du -sh dir
 Example:
 du -sh html
 ```
+
+**Always .sql when you have to import from mysqldump**
