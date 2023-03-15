@@ -20,5 +20,5 @@ service mysql restart
 
 **Allow remote access through firewall**
 ```
-Test
+Assuming you are using port 3306 for your MySQL server, we will need to allow this through the system firewall.
 ```
