@@ -18,4 +18,7 @@ bind-address = 199.27.180.192
 service mysql restart
 ```
 
-**Test**
+**Allow remote access through firewall**
+```
+Test
+```
