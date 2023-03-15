@@ -44,10 +44,13 @@ mysql> CREATE USER 'colibri'@'199.27.180.192' IDENTIFIED BY 'colibri';
 mysql> GRANT ALL PRIVILEGES ON *.* TO 'colibri'@'199.27.180.192';
 mysql> FLUSH PRIVILEGES;
 ```
-<br />
+
 ***DONE***
+```
+```
 ***DONE***
-<br />
+```
+```
 **How to install & configure firewall**
 ```
 Assuming you are using port 3306 for your MySQL server, 
