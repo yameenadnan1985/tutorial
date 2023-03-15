@@ -45,12 +45,8 @@ mysql> GRANT ALL PRIVILEGES ON *.* TO 'colibri'@'199.27.180.192';
 mysql> FLUSH PRIVILEGES;
 ```
 
-***DONE***
-```
-```
-***DONE***
-```
-```
+# DONE
+
 **How to install & configure firewall**
 ```
 Assuming you are using port 3306 for your MySQL server, 
