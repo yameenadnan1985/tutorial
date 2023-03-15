@@ -13,6 +13,9 @@ Delete that address and put your server’s public IP address in its place.
 We will just use 199.27.180.192 for the sake of the example. 
 [mysqld]
 bind-address = 199.27.180.192
+
+# restart mysql server
+service mysql restart
 ```
 
 **Test**
