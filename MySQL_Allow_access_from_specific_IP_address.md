@@ -26,7 +26,8 @@ service mysql restart
 **Allow remote access through firewall for Specific IP Addresses**
 ```
 You can also specify a specific port that the IP address is allowed to connect to 
-by adding to any port followed by the port number. For example, if you want to allow 199.27.180.92 to connect to port 3306 (mysql), use this command:
+by adding to any port followed by the port number. For example, if you want to 
+allow 199.27.180.92 to connect to port 3306 (mysql), use this command:
 
 sudo ufw allow from 199.27.180.192 to any port 3306
 Or 
@@ -43,9 +44,10 @@ mysql> CREATE USER 'colibri'@'199.27.180.192' IDENTIFIED BY 'colibri';
 mysql> GRANT ALL PRIVILEGES ON *.* TO 'colibri'@'199.27.180.192';
 mysql> FLUSH PRIVILEGES;
 ```
-
-
-
+<br />
+***DONE***
+***DONE***
+<br />
 **How to install & configure firewall**
 ```
 Assuming you are using port 3306 for your MySQL server, 
