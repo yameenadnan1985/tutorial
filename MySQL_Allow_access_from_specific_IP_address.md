@@ -1,4 +1,4 @@
-**STEP 1: **
+**STEP 1:**
 **Configure MySQL bind address**
 ```
 # Find file containing bind-address and set bind-address to address of Specific IP (199.27.180.192) of server
@@ -22,7 +22,7 @@ bind-address = 199.27.180.192, 199.27.180.216
 service mysql restart
 ```
 
-**STEP 2: **
+**STEP 2:**
 **Allow remote access through firewall for Specific IP Addresses**
 ```
 You can also specify a specific port that the IP address is allowed to connect to 
@@ -35,7 +35,7 @@ Or
 sudo iptables -A INPUT -p tcp -s 199.27.180.192 --dport 3306 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
 ```
 
-**STEP 3: **
+**STEP 3:**
 **MYSQL: Allow remote connections to a particular user from a specific IP**
 ```
 # Login as root user
