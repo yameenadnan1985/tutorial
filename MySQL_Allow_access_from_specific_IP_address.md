@@ -1,5 +1,7 @@
-**Find file containing bind-address and set bind-address to address of Specific IP of server**
+**STEP 1**
+**Configure MySQL bind address**
 ```
+# Find file containing bind-address and set bind-address to address of Specific IP (199.27.180.192) of server
 grep -r bind-address /etc/
 Example:
 /etc/mysql/mariadb.conf.d/50-server.cnf
@@ -18,7 +20,29 @@ bind-address = 199.27.180.192
 service mysql restart
 ```
 
-**Allow remote access through firewall**
+**STEP 2**
+**Allow remote access through firewall for Specific IP Addresses**
+```
+You can also specify a specific port that the IP address is allowed to connect to 
+by adding to any port followed by the port number. For example, if you want to allow 199.27.180.92 to connect to port 3306 (mysql), use this command:
+
+sudo ufw allow from 199.27.180.192 to any port 3306
+Or 
+# Good old iptables command that should work on any system
+sudo iptables -A INPUT -p tcp -s 199.27.180.192 --dport 3306 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+```
+
+**STEP 3**
+**MYSQL: Allow remote connections to a particular user from a specific IP**
+```
+# Login as root user
+$ mysql
+mysql> CREATE USER 'colibri'@'199.27.180.192' IDENTIFIED BY 'colibri';
+```
+
+
+
+**How to install & configure firewall**
 ```
 Assuming you are using port 3306 for your MySQL server, 
 we will need to allow this through the system firewall using ufw (uncomplicated firewall)
@@ -71,24 +95,4 @@ sudo ufw allow 80
 sudo ufw allow https
 or
 sudo ufw allow 443
-```
-
-**Specific IP Addresses**
-```
-You can also specify a specific port that the IP address is allowed to connect to 
-by adding to any port followed by the port number. For example, if you want to allow 199.27.180.92 to connect to port 3306 (mysql), use this command:
-
-sudo ufw allow from 199.27.180.192 to any port 3306
-```
-
-**And the good old iptables command that should work on any system**
-```
-sudo iptables -A INPUT -p tcp -s 10.150.1.1 --dport 3306 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
-```
-
-**Allow remote connections to a particular user from a specific IP**
-```
-# Login as root user
-$ mysql
-mysql> CREATE USER 'colibri'@'19.27.180.192' IDENTIFIED BY 'colibri';
 ```
