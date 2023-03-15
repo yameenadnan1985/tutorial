@@ -13,9 +13,11 @@ Find the setting that says bind-address underneath the [mysqld] section.
 By default, this should currently be configured to the loopback address 127.0.0.1. 
 Delete that address and put your server’s public IP address in its place. 
 We will just use 199.27.180.192 for the sake of the example. 
+
 [mysqld]
 bind-address = 199.27.180.192
-
+# To bind multiple IP addresses use
+bind-address = 199.27.180.192, 199.27.180.216
 # restart mysql server
 service mysql restart
 ```
@@ -38,6 +40,8 @@ sudo iptables -A INPUT -p tcp -s 199.27.180.192 --dport 3306 -m conntrack --ctst
 # Login as root user
 $ mysql
 mysql> CREATE USER 'colibri'@'199.27.180.192' IDENTIFIED BY 'colibri';
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'colibri'@'199.27.180.192';
+mysql> FLUSH PRIVILEGES;
 ```
 
 
