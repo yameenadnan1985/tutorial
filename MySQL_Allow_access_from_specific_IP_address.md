@@ -1,7 +1,8 @@
 **STEP 1:**
 **Configure MySQL bind address**
 ```
-# In DB Server find the file containing bind-address and set bind-address to address of DB Server itself (199.27.180.198)
+# In DB Server find the file containing bind-address and set bind-address 
+to address of DB Server itself (199.27.180.198)
 grep -r bind-address /etc/
 Example:
 /etc/mysql/mariadb.conf.d/50-server.cnf
