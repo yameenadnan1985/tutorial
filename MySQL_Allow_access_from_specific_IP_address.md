@@ -1,56 +1,44 @@
 **STEP 1:**
 **Configure MySQL bind address**
 ```
-# Find file containing bind-address and set bind-address to address of Specific IP (199.27.180.192) of server
+# In DB Server find the file containing bind-address and set bind-address to address of DB Server itself (199.27.180.198)
 grep -r bind-address /etc/
 Example:
 /etc/mysql/mariadb.conf.d/50-server.cnf
 
-# Edit file containing bind-address
+# Edit file containing bind-address and add address of DB Server
 vi /etc/mysql/mariadb.conf.d/50-server.cnf
 
-Find the setting that says bind-address underneath the [mysqld] section. 
-By default, this should currently be configured to the loopback address 127.0.0.1. 
-Delete that address and put your server’s public IP address in its place. 
-We will just use 199.27.180.192 for the sake of the example. 
-
 [mysqld]
-bind-address = 199.27.180.192
-# To bind multiple IP addresses use
-bind-address = 199.27.180.192, 199.27.180.216
+bind-address = 199.27.180.198
+
 # restart mysql server
 service mysql restart
 ```
 
 **STEP 2:**
-**Allow remote access through firewall for Specific IP Addresses**
-```
-You can also specify a specific port that the IP address is allowed to connect to 
-by adding to any port followed by the port number. For example, if you want to 
-allow 199.27.180.92 to connect to port 3306 (mysql), use this command:
-
-sudo ufw allow from 199.27.180.192 to any port 3306
-Or 
-# Good old iptables command that should work on any system
-sudo iptables -A INPUT -p tcp -s 199.27.180.192 --dport 3306 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
-```
-
-**STEP 3:**
 **MYSQL: Allow remote connections to a particular user from a specific IP**
 ```
 # Login as root user
 $ mysql
-mysql> CREATE USER 'colibri'@'199.27.180.192' IDENTIFIED BY 'colibri';
-mysql> GRANT ALL PRIVILEGES ON *.* TO 'colibri'@'199.27.180.192';
+mysql> CREATE USER 'colibri'@'199.27.180.198' IDENTIFIED BY 'colibri';
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'colibri'@'199.27.180.198' WITH GRANT OPTION;
 mysql> FLUSH PRIVILEGES;
+```
+
+**STEP 3:**
+**Allow remote access through firewall for Specific IP Addresses**
+```
+if you want to allow 199.27.180.92 to connect to port 3306 (mysql), use this command:
+
+ufw allow from 199.27.180.192 to any port 3306
 ```
 
 # DONE
 
 **How to install & configure firewall**
 ```
-Assuming you are using port 3306 for your MySQL server, 
-we will need to allow this through the system firewall using ufw (uncomplicated firewall)
+Assuming you are using port 3306 for your MySQL server.
 # Install ufw
 apt install ufw
 ```
