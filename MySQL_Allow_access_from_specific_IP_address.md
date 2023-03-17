@@ -94,11 +94,31 @@ sudo ufw allow 443
 # ufw important commands
 
 ```
+ufw allow ssh
+// Allow SSH access
+
+ufw allow http
+// Allow http access
+
+ufw allow https
+// Allow https access
+
+ufw allow from xxx.xxx.xxx.xxx to any port n
+Example:
+ufw allow from 199.27.180.192 to any port 3306
+// Allow specific IP Address 
+
 ufw disable
 // Disable firewall
 
 ufw enable
 // Enable firewall
 
+ufw status numbered
+// Return rules with numbers
 
+ufw delete 2
+// Will delete 2nd rule from list of rules
+
+FYI: Always run ufw disable, ufw enable after modifying rule
 ```
