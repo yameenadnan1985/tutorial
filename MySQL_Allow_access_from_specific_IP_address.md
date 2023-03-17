@@ -90,3 +90,15 @@ sudo ufw allow https
 or
 sudo ufw allow 443
 ```
+
+# ufw important commands
+
+```
+ufw disable
+// Disable firewall
+
+ufw enable
+// Enable firewall
+
+
+```
