@@ -11,7 +11,7 @@ git remote add origin git@github.com:Grindyzer/Colibriwww.git
 git pull origin 1.4.0
 
 # If already contains file use this command
-git pull origin 1.4.0 --allow-unrelated-histories
+git pull origin 1.4.0 --allow-unrelated-histories --ignore-all-space
 ```
 
 
