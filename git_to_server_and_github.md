@@ -1,3 +1,16 @@
+**Git to Github to Server**
+```
+# local PC push the changes to github
+git push origin 1.4.0
+
+# In remote install github and pull the changes
+git init
+git remote add origin git@github.com:Grindyzer/Colibriwww.git
+git pull origin 1.4.0 --allow-unrelated-histories
+git pull origin 1.4.0
+```
+
+
 **Git to Server**
 **Good Video**
 ```
