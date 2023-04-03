@@ -15,6 +15,12 @@ git pull origin 1.4.0 --allow-unrelated-histories
 ```
 
 
+**Get list of conflicted files in Git?**
+```
+git diff --name-only --diff-filter=U --relative
+```
+
+
 **Git to Server**
 **Good Video**
 ```
