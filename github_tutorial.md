@@ -51,3 +51,8 @@ https://stackoverflow.com/questions/21160774/github-error-key-already-in-use
 ```
 git remote -v
 ```
+
+**Get list of conflicted files in Git?**
+```
+git diff --name-only --diff-filter=U --relative
+```
