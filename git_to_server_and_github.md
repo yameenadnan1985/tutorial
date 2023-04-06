@@ -1,4 +1,4 @@
-**Git to Github to Server**
+#Git to Github to Server#
 ```
 # local PC push the changes to github
 git push origin 1.4.0
@@ -8,7 +8,18 @@ git init
 git add .
 git commit -m "First git pull"
 git remote add origin git@github.com:Grindyzer/Colibriwww.git
-git pull origin 1.4.0
+git pull origin main --allow-unrelated-histories
+# If receive this error
+# error: The following untracked working tree files would be overwritten by merge:
+# ...
+# Please move or remove them before you merge.
+# Aborting
+# Then use these commands
+git fetch --all
+git reset --hard origin/main
+
+
+#Other details#
 
 # If already contains file use this command
 git pull origin 1.4.0 --allow-unrelated-histories --ignore-all-space
