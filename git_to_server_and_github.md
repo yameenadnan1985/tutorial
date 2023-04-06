@@ -17,14 +17,10 @@ git pull origin main --allow-unrelated-histories
 # Then use these commands
 git fetch --all
 git reset --hard origin/main
-
+```
+# Done
 
 # Other details
-
-# If already contains file use this command
-git pull origin 1.4.0 --allow-unrelated-histories --ignore-all-space
-```
-
 
 **Get list of conflicted files in Git?**
 ```
