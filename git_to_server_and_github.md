@@ -1,4 +1,4 @@
-#Git to Github to Server#
+# Git to Github to Server
 ```
 # local PC push the changes to github
 git push origin 1.4.0
@@ -19,7 +19,7 @@ git fetch --all
 git reset --hard origin/main
 
 
-#Other details#
+# Other details
 
 # If already contains file use this command
 git pull origin 1.4.0 --allow-unrelated-histories --ignore-all-space
