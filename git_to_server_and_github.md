@@ -16,6 +16,7 @@ git pull origin main --allow-unrelated-histories
 # Aborting
 # Then use these commands
 git fetch --all
+git reset --mixed origin/main
 git reset --hard origin/main
 ```
 # Done
