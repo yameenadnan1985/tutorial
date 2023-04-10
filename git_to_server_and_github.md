@@ -18,6 +18,20 @@ git pull origin main --allow-unrelated-histories
 git fetch --all
 git reset --mixed origin/main
 git reset --hard origin/main
+
+
+# fetch from the default remote, origin
+git fetch
+# create a branch at your current master
+git branch old-master
+# reset to origin's master
+git reset --hard origin/master
+# merge your old master, keeping "our" (origin/master's) content
+git merge -s ours old-master
+
+git merge --allow-unrelated-histories -s ours old-master
+
+git pull origin main --allow-unrelated-histories
 ```
 # Done
 
