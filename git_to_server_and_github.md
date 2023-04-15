@@ -17,8 +17,14 @@ git pull origin main --allow-unrelated-histories
 # Aborting
 # Then use these commands
 git reset --hard origin/main
+```
+# Set permissions
 
-
+```
+# Go to directory where you want to update permissions
+git update-index --chmod=+x index.php
+git commit -m "Changing file permissions"
+```
 # fetch from the default remote, origin
 git fetch
 # create a branch at your current master
