@@ -6,6 +6,7 @@ git push origin 1.4.0
 # In remote install github and pull the changes
 git init
 git add .
+# Move .gitignore file to server
 git commit -m "First git pull"
 git remote add origin git@github.com:Grindyzer/Colibriwww.git
 git pull origin main --allow-unrelated-histories
@@ -15,8 +16,6 @@ git pull origin main --allow-unrelated-histories
 # Please move or remove them before you merge.
 # Aborting
 # Then use these commands
-git fetch --all
-git reset --mixed origin/main
 git reset --hard origin/main
 
 
