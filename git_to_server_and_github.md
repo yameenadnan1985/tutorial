@@ -21,7 +21,7 @@ git reset --hard origin/main
 # Set permissions
 
 ```
-# Go to directory where you want to update permissions
+# We can only assign executable permissions to a file. Read/Write permissions we will menually have to set
 git update-index --chmod=+x index.php
 git commit -m "Changing file permissions"
 ```
