@@ -2,10 +2,24 @@
 ```
 # local PC push the changes to github
 git push origin 1.4.0
+```
 
-# In remote install github and pull the changes
+**In remote install git**
+```
+apt update or sudo apt update
+apt install git or sudo apt install git
+git --version
+```
+
+**Start empty git repo**
+```
 git init
-# After git init move .gitignore from local to remote.
+```
+
+**After git init move .gitignore from local to remote.**
+
+**Add contents in git**
+```
 git add .
 git commit -m "First commit"
 git remote add origin git@github.com:Grindyzer/Colibriwww.git
@@ -18,8 +32,8 @@ git pull origin main --allow-unrelated-histories
 # Then use these commands
 git reset --hard origin/main
 ```
-# Set permissions
 
+**Set Permissions**
 ```
 # To see file permissions do this
 git ls-files --stage
