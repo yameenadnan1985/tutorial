@@ -56,3 +56,13 @@ git remote -v
 ```
 git diff --name-only --diff-filter=U --relative
 ```
+
+**How to ignore a file in git**
+```
+# Add file/directory path in .gitignore
+Example: .gitignore
+assets/globalpayments/app_id.txt
+
+# Remove the file from from cache of git so that next time it does not track file 
+git rm --cached assets/globalpayments/app_id.txt
+```
