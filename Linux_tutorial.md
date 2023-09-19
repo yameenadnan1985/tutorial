@@ -190,6 +190,12 @@ bzip2 -z filename
 bzip2 -d DB_S21091901_20221022.sql.bz2
 ```
 
+**uncompress directly to mysql**
+```
+# To uncompress a file directly to mysql do this
+xz -dc mysql-backup-Friday.sql.xz | mysql
+```
+
 **Get Users List**
 ```
 cat /etc/passwd
