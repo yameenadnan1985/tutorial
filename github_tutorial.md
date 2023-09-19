@@ -66,3 +66,11 @@ assets/globalpayments/app_id.txt
 # Remove the file from from cache of git so that next time it does not track file 
 git rm --cached assets/globalpayments/app_id.txt
 ```
+
+**How to undo gitpull or rollback to old state**
+```
+# Before you do git pull first do "git reflog" and you will get last commit number
+git reflog
+#  and then do
+git reset --hard a0d3fe6
+```
