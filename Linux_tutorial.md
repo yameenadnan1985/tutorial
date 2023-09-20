@@ -209,3 +209,11 @@ du -sh html
 ```
 
 **Always .sql when you have to import from mysqldump**
+
+**Make /tmp/ writable**
+```
+vi /lib/systemd/system/apache2.service
+Change PrivateTmp=true from true to false
+Run this command
+systemctl daemon-reload
+```
