@@ -743,3 +743,5 @@ Write PDF
 Localization
 Regular expressions
 ```
+
+**If you add appenders then you must have to add getNameAttribute() function**
