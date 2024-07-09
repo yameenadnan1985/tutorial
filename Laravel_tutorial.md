@@ -745,3 +745,34 @@ Regular expressions
 ```
 
 **If you add appenders then you must have to add getNameAttribute() function**
+
+**Subqueries**
+```
+Subquery in select::
+$orders = DB::table('orders')
+    ->select('orders.*', DB::raw('(SELECT SUM(quantity) FROM order_items WHERE order_items.order_id = orders.id) as total_quantity'))
+    ->get();
+
+
+Subquery in where::
+$orders = DB::table('orders')
+    ->whereIn('id', function($query) {
+        $query->select('order_id')
+              ->from('order_items')
+              ->groupBy('order_id')
+              ->havingRaw('SUM(quantity) > ?', [10]);
+    })
+    ->get();
+
+
+Subquery in From::
+$orders = DB::table(DB::raw('(SELECT order_id, SUM(quantity) as total_quantity FROM order_items GROUP BY order_id) as sub'))
+    ->where('total_quantity', '>', 10)
+    ->get();
+
+Subquery in Join::
+$orders = DB::table('orders')
+    ->leftJoin(DB::raw('(SELECT order_id, SUM(quantity) as total_quantity FROM order_items GROUP BY order_id) as oi'), 'orders.id', '=', 'oi.order_id')
+    ->select('orders.*', 'oi.total_quantity')
+    ->get();
+```
