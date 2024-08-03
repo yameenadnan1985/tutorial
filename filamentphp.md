@@ -19,6 +19,7 @@ public static function canAccess(): bool
 }
 ```
 **Add button to head section of Page**
+// To add button to header section of page use getHeaderActions()
 ```
 protected function getHeaderActions(): array
 {
