@@ -11,7 +11,7 @@ Action::make('emailSettings')
 ->label(__('Email Settings'))
 ->url(EmailSettingResource::getUrl()),
 ```
-***Restrict Access of Admin only***
+**Restrict Access of Admin only**
 ```
 public static function canAccess(): bool
 {
