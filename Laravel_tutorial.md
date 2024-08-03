@@ -656,8 +656,12 @@ carbon (library):
 Carbon is a laravel library that comes up with laravel install
 use Carbon\Carbon;
 
-$now = Carbon::now()->format('Y-m-d H:i:s');
 
+$now = Carbon::now();
+$now->format('Y-m-d H:i:s');
+$now->addDays(10);
+$now->addMonths(2);
+$now->addYears(1);
 ```
 
 
