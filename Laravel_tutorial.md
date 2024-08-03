@@ -654,8 +654,10 @@ Article::create($data);
 ```
 carbon (library):
 Carbon is a laravel library that comes up with laravel install
+use Carbon\Carbon;
 
-$now = Carbon\Carbon::now();
+$now = Carbon::now()->format('Y-m-d H:i:s');
+
 ```
 
 
