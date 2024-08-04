@@ -45,7 +45,7 @@ protected function getHeaderActions(): array
         ];
 }
 ```
-**Modal forms**
+**Modal forms**<br>
 Confirmation Model
 ```
 Use App\Models\Post;
