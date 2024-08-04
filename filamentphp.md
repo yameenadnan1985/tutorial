@@ -49,7 +49,19 @@ protected function getHeaderActions(): array
 Confirmation Model
 ```
 Use App\Models\Post;
+
 Action::make('delete')
     ->action(fn (Post $record) => $record->delete())
     ->requiresConfirmation()
+```
+**Simple Model Form**
+```
+Use App\Models\Post;
+use Filament\Forms\Components\InputText;
+
+Action::make('delete')
+    ->form([
+        InputText::make('first_name'),
+        InputText::make('last_name')
+])
 ```
