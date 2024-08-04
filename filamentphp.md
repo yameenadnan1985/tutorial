@@ -65,3 +65,20 @@ Action::make('delete')
         InputText::make('last_name')
 ])
 ```
+**Get Modal Form data**<br>
+The data from the Model Form is available in the $data array of the action() closure:
+```
+use App\Models\Post;
+use App\Models\User;
+use Filament\Forms\Components\InputText;
+ 
+Action::make('updateName')
+    ->form([
+        InputText::make('name')
+            ->required(),
+    ])
+    ->action(function (array $data, Post $record): void {
+        $record->author()->name($data['name']);
+        $record->save();
+    })
+```
