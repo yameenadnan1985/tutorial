@@ -82,3 +82,20 @@ Action::make('updateName')
         $record->save();
     })
 ```
+**Fill Model Form with Existing Data**
+```
+use App\Models\Post;
+use App\Models\User;
+use Filament\Forms\Components\InputText;
+use Filament\Forms\Form;
+ 
+Action::make('updateAuthor')
+    ->fillForm(fn (Post $record): array => [
+        'authorName' => $record->author->name,
+    ])
+    ->form([
+        InputText::make('authorName')
+            ->label(__('Name'))
+            ->required(),
+    ])
+```
