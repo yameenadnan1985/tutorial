@@ -104,3 +104,10 @@ Action::make('updateAuthor')
             ->required(),
     ])
 ```
+**Disabling All Form Fields**
+```
+Action::make('')
+->form([])
+->fillForm()
+->disabledForm()
+```
