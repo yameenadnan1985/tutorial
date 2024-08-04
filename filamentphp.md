@@ -30,7 +30,7 @@ public static function canAccess(): bool
         return auth()->user()->is_admin;
 }
 ```
-**Add button to head section of Page**
+**Add button to head section of Page**<br>
 // To add button to header section of page use getHeaderActions()
 ```
 protected function getHeaderActions(): array
