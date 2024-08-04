@@ -46,7 +46,12 @@ protected function getHeaderActions(): array
 }
 ```
 **Modal forms**<br>
-Confirmation Model
+Confirmation Model<br>
+In model form there are few things important<br>
+1- Action::make()<br>
+2- ->fillForm(fn (Post $record): array => ['authorName' => $record->name])<br>
+3- ->form([InputText::make('authorName')])<br>
+4- ->action(fn(array $data, Post $record): void => $record->name = $data['authorName'])
 ```
 Use App\Models\Post;
 
