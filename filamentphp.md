@@ -1,7 +1,7 @@
 **Create new resource**
 ```
-php artisan make:filament-resource ModelName;
-e.g php artisan make:filament-resource User;
+php artisan make:filament-resource User;
+It will create new file inside App\filament\UserResource; and a directory UserResource
 ```
 
 **Create button**
