@@ -3,6 +3,12 @@
 php artisan make:filament-resource User;
 It will create new file inside App\filament\UserResource and a directory UserResource
 ```
+**To Add New input**
+```
+use Filament\Forms\Components\TextInput;
+TextInput::make('name')
+->required();
+```
 
 **Create button**
 ```
