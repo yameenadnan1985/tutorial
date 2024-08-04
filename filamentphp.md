@@ -1,3 +1,9 @@
+**Create new resource**
+```
+php artisan make:filament-resource ModelName;
+e.g php artisan make:filament-resource User;
+```
+
 **Create button**
 ```
 Action::make('import')
