@@ -111,3 +111,14 @@ Action::make('')
 ->fillForm()
 ->disabledForm()
 ```
+**Notifications**
+```
+use Filament\Notifications\Notification;
+
+Notification::make()
+    ->title('Saved successfully')
+    ->success()
+    ->body('Changes to the post have been saved.')
+    ->send();
+
+```
