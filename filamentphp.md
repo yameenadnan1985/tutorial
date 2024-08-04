@@ -45,3 +45,11 @@ protected function getHeaderActions(): array
         ];
 }
 ```
+**Modal forms**
+Confirmation Model
+```
+Use App\Models\Post;
+Action::make('delete')
+    ->action(fn (Post $record) => $record->delete())
+    ->requiresConfirmation()
+```
