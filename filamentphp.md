@@ -41,9 +41,6 @@ protected function getHeaderActions(): array
             Action::make('import')
                 ->label(__('Import Data'))
                 ->url(ImportExcel::getUrl()),
-            Action::make('formSettings')
-                ->label(__('Student Form Setting'))
-                ->url(FormSettingResource::getUrl()),
         ];
 }
 ```
