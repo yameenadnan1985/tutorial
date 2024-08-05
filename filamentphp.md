@@ -9,7 +9,27 @@ use Filament\Forms\Components\TextInput;
 TextInput::make('name')
 ->required();
 ```
+**Type of Actions/Buttons**
+1- Page header actions (getHeaderActions)
+2- Table actions (Row Actions, Header Actions, Bulk Actions)
+3- Custom Livewire component actions
+```
+public function table(Table $table): Table
+{
+    return $table
+        ->actions([
+	   Action::make('delete')
+    		->requiresConfirmation()
+    		->action(fn (Post $record) => $record->delete())
+        ])
+        ->headerActions([]),
+        ->bulkActions([
+	        ->requiresConfirmation()
+                ->action(fn (Collection $records) => $records->each->delete())
+        ])
+}
 
+```
 **Create button**
 ```
 Action::make('import')
