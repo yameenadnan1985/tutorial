@@ -69,7 +69,7 @@ Action::make('delete')
         InputText::make('last_name')
 ])
 ```
-**Get Modal Form data**<br>
+**Get data from Modal**<br>
 The data from the Model Form is available in the $data array of the action() closure:
 ```
 use App\Models\Post;
