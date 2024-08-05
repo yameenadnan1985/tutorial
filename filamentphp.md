@@ -9,9 +9,9 @@ use Filament\Forms\Components\TextInput;
 TextInput::make('name')
 ->required();
 ```
-**Type of Actions/Buttons**
-1- Page header actions (getHeaderActions)
-2- Table actions (Row Actions, Header Actions, Bulk Actions)
+**Type of Actions/Buttons**<br>
+1- Page header actions (getHeaderActions)<br>
+2- Table actions (Row Actions, Header Actions, Bulk Actions)<br>
 3- Custom Livewire component actions
 ```
 public function table(Table $table): Table
