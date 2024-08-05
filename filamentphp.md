@@ -12,7 +12,22 @@ TextInput::make('name')
 **Type of Actions/Buttons**<br>
 1- Page header actions (getHeaderActions)<br>
 2- Table actions (Row Actions, Header Actions, Bulk Actions)<br>
-3- Custom Livewire component actions
+3- Custom Livewire component actions<br>
+**Page header actions**
+```
+protected function getHeaderActions(): array
+{
+        return [
+            Action::make('import')
+                ->label(__('Import Data'))
+                ->url(ImportExcel::getUrl()),
+        ];
+}
+```
+**Table actions**<br>
+1- Row actions<br>
+2- Table header actions<br>
+3- Bulk actions
 ```
 public function table(Table $table): Table
 {
@@ -52,18 +67,7 @@ public static function canAccess(): bool
         return auth()->user()->is_admin;
 }
 ```
-**Add button to head section of Page**<br>
-// To add button to header section of page use getHeaderActions()
-```
-protected function getHeaderActions(): array
-{
-        return [
-            Action::make('import')
-                ->label(__('Import Data'))
-                ->url(ImportExcel::getUrl()),
-        ];
-}
-```
+
 **Modal forms**<br>
 Confirmation Model<br>
 In model form there are few things important<br>
