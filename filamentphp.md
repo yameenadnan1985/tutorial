@@ -22,6 +22,8 @@ use App\filament\resources\EmailSettingResource;
 Action::make('emailSettings')
 ->label(__('Email Settings'))
 ->url(EmailSettingResource::getUrl()),
+// To send data to page
+->url(EmailSettingResource::getUrl($data)),
 ```
 **Restrict Access of Admin only**
 ```
