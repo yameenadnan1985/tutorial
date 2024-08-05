@@ -86,7 +86,8 @@ Action::make('updateName')
         $record->save();
     })
 ```
-**Fill Model Form with Existing Data**
+**Fill Model with Existing Data**<br>
+To fill model with existing data use fillForm method
 ```
 use App\Models\Post;
 use App\Models\User;
