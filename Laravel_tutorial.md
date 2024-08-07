@@ -129,8 +129,6 @@ to
 'charset' => 'utf8',
 'collation' => 'utf8_unicode_ci',
 ```
-
-
 **Seeder**
 ```
 Step 1:
@@ -219,8 +217,14 @@ $article->title = ‘title’;
 $article->body = ‘body’;
 $article->save();
 ```
-
-
+**where/whereRelation**<br>
+whereRelation('TableName', 'ColumnName', 'ComparisonOperator', 'Value')
+```
+$studentLessonProgresses = StudentLessonProgress::query()
+->where('survey_flag', '!=', true)
+->whereRelation('schedule','product_type', '!=', ScheduleProductType::BLOCK->value)
+->get();
+```
 **Model - one to many**
 ```
 # STEP 1: Add two functions as below
@@ -251,15 +255,6 @@ public function up() {
 	->onDelete('cascade');
 }
 ```
-**where/whereRelation**<br>
-whereRelation('TableName', 'ColumnName', 'ComparisonOperator', 'Value')
-```
-$studentLessonProgresses = StudentLessonProgress::query()
-->where('survey_flag', '!=', true)
-->whereRelation('schedule','product_type', '!=', ScheduleProductType::BLOCK->value)
-->get();
-```
-
 **Model - Many to Many**
 ```
 https://www.youtube.com/watch?v=nE129JewqbU
