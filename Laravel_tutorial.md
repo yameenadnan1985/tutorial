@@ -251,7 +251,14 @@ public function up() {
 	->onDelete('cascade');
 }
 ```
-
+**where/whereRelation**<br>
+whereRelation('TableName', 'ColumnName', 'ComparisonOperator', 'Value')
+```
+$studentLessonProgresses = StudentLessonProgress::query()
+->where('survey_flag', '!=', true)
+->whereRelation('schedule','product_type', '!=', ScheduleProductType::BLOCK->value)
+->get();
+```
 
 **Model - Many to Many**
 ```
