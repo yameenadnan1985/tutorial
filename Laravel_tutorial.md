@@ -217,6 +217,10 @@ $article->title = ‘title’;
 $article->body = ‘body’;
 $article->save();
 ```
+**Get Single Value**
+```
+$group_name = Group::query()->where('group_id', '=', $groupId)->value('group_name');
+```
 **where/whereRelation**<br>
 whereRelation('TableName', 'ColumnName', 'ComparisonOperator', 'Value')
 ```
