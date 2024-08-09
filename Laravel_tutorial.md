@@ -236,6 +236,16 @@ public function getAddressAttribute(): string
         return (string) $this->user->address;
 }
 ```
+**protected $casts**<br>
+When you define a cast on a model attribute, Laravel will automatically cast the attribute to the specified type when you access it.
+```
+protected $casts = [
+        'is_admin' => 'boolean',   // Casts 'is_admin' to a boolean
+        'created_at' => 'datetime', // Casts 'created_at' to a Carbon instance (date/time)
+        'age' => 'integer',        // Casts 'age' to an integer
+        'balance' => 'float',      // Casts 'balance' to a float
+];
+```
 **where/whereRelation**<br>
 whereRelation('TableName', 'ColumnName', 'ComparisonOperator', 'Value')
 ```
