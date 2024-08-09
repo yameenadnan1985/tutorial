@@ -221,6 +221,21 @@ $article->save();
 ```
 $group_name = Group::query()->where('group_id', '=', $groupId)->value('group_name');
 ```
+**protected $appends**
+```
+protected $appends = [
+        'first_name',
+	'address'
+];
+public function getFirstNameAttribute(): string
+{
+        return (string) $this->user->address;
+}
+public function getAddressAttribute(): string
+{
+        return (string) $this->user->address;
+}
+```
 **where/whereRelation**<br>
 whereRelation('TableName', 'ColumnName', 'ComparisonOperator', 'Value')
 ```
