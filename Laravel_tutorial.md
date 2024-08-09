@@ -221,6 +221,11 @@ $article->save();
 ```
 $group_name = Group::query()->where('group_id', '=', $groupId)->value('group_name');
 ```
+**protected $with**<br>
+protected $with property means that whenever you retrieve instances of the model, the specified relationships will automatically be loaded
+```
+protected $with = ['studentCC', 'studentRecurringPayments'];
+```
 **protected $appends**
 ```
 protected $appends = [
