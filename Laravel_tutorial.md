@@ -249,6 +249,11 @@ public function getAddressAttribute(): string
         return (string) $this->user->first_name;
 }
 ```
+**Collection Example**<br>
+In example below $users is collection
+```
+$users = DB::table('users')->get();
+```
 **protected $casts**<br>
 When you define a cast on a model attribute, Laravel will automatically cast the attribute to the specified type when you access it.
 ```
