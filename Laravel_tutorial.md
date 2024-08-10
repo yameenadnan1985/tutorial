@@ -249,9 +249,23 @@ public function getAddressAttribute(): string
         return (string) $this->user->first_name;
 }
 ```
-**Collection Example**<br>
+**Collection with Example**<br>
+A collection is an advanced, flexible wrapper around arrays of data<br>
+When you retrieve data from the database using Eloquent, Laravel automatically wraps the result in a collection:<br>
 In example below $users is collection
 ```
+Common collection methods
+->all()
+->map()
+->each()
+->pluck() // Retrieves all values for a given key from the collection.
+->filter()
+->contains()
+->first()
+->sort()
+->groupBy()
+->count()
+
 $users = DB::table('users')->get();
 ```
 **protected $casts**<br>
