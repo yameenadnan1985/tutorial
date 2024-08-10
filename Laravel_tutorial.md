@@ -217,6 +217,14 @@ $article->title = ‘title’;
 $article->body = ‘body’;
 $article->save();
 ```
+**Disable timestamps**
+```
+public $timestamps = false;
+```
+**Disabling autoincrement**
+```
+public $incrementing = false;
+```
 **Get Single Value**
 ```
 $group_name = Group::query()->where('group_id', '=', $groupId)->value('group_name');
@@ -238,7 +246,7 @@ public function getFirstNameAttribute(): string
 }
 public function getAddressAttribute(): string
 {
-        return (string) $this->user->address;
+        return (string) $this->user->first_name;
 }
 ```
 **protected $casts**<br>
