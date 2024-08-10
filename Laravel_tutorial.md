@@ -268,6 +268,11 @@ Common collection methods
 
 $users = DB::table('users')->get();
 ```
+**Modify timestamp columns**
+```
+const CREATED_AT = 'entry_time';
+const UPDATED_AT = 'update_time';
+```
 **protected $casts**<br>
 When you define a cast on a model attribute, Laravel will automatically cast the attribute to the specified type when you access it.
 ```
