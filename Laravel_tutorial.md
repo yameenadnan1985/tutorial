@@ -217,6 +217,48 @@ $article->title = ‘title’;
 $article->body = ‘body’;
 $article->save();
 ```
+**Model - one to many**
+```
+# User has many articles 
+# In User model
+public function articles (): HasMany {
+	return $this->hasMany(Article::class, 'user_id', 'user_id');
+}
+
+# One article belong to one user
+# In Arrticle model write this
+public function user () {
+	$this->belongsTo(User::class, 'user_id', 'user_id');
+}
+```
+**Model - Many to Many**
+```
+# One category belong to many posts, one post belong to many category
+
+Category.php model
+public function posts (): BelongsToMany {
+	$this->belongstoMany(Post::Class, 'category_id', 'category_id');
+}
+
+Post.php model 
+public function categories (): BelongsToMany {
+	$this->belongstoMany(Category::Class, 'post_id', 'post_id');
+}
+```
+**HasManyThrough**<br>
+1st Parameter: RelatedTO (Lesson::Class)<br>
+2nd Parameter: Through (StudentLessonProgress::Class)<br>
+3rd Parameter: Foreignkey of "Student" in "StudentLessonProgress" i,e "student_id"<br>
+4th Parameter: Foreignkey of "StudentLessonProgress" in "Lesson" i,e "lesson_id"<br>
+5th Parameter: Localkey Of Student i,e "student_id"<br>
+6th Parameter: Localkey Of StudentLessonProgress i,e "lesson_id"
+```
+// This code is written in Student Model
+public function lessons(): HasManyThrough
+{
+	return $this->hasManyThrough(Lesson::class, StudentLessonProgress::class, 'student_id', 'lesson_id', 'student_id', 'lesson_id');
+}
+```
 **Disable timestamps**
 ```
 public $timestamps = false;
@@ -291,82 +333,6 @@ $studentLessonProgresses = StudentLessonProgress::query()
 ->whereRelation('schedule','product_type', '!=', ScheduleProductType::BLOCK->value)
 ->get();
 ```
-**Model - one to many**
-```
-# STEP 1: Add two functions as below
-# User has multiple articles
-# Article belong to one user
-# User model
-# get all of the articles of user: $user->articles
-public function articles () {
-	$this->hasMany('App\Article');
-}
-
-# Flip side article belong to user
-# Get user who created the article $article->user
-
-public function user () {
-	$this->belongsTo('App\Article');
-}
-
-STEP 2: Add foreign key in article
-Go to database/migration/CreateArticlesTable.php
-public function up() {
-	$table->integer('user_id')->nullable();
-	
-	# If you also want to delete all articles when a user deleted then add.
-	$table->foreign('user_id') // Foreign key.
-	->references('id') 	   // Primary key of parent table.
-	->on('userrs')    	   // Parent table name.
-	->onDelete('cascade');
-}
-```
-**Model - Many to Many**
-```
-https://www.youtube.com/watch?v=nE129JewqbU
-1 category belong to many posts, 1 post belong to many category
-
-# Step 1:
-php artissan make:model Post
-php artisan make:model Category
-
-# Step 2:
-php artisan make:migration create_posts_table --create="posts"
-// and add columns as required
-php artisan make:migration create_categories_table --create="categories"
-// and add columns as required
-
-// Create pivote table
-// Convention: create_alphabateLow_alphabateHigh_table
-// Use singular word.
-Example:
-php artisan make:migration create_category_post_table --create="category_post"
-
-# Step 3:
-open category_post file and modify up method
-public function up () {
-	Schema::create('category_post', function (Blueprint $table) {
-		$table->integer('category_id')->unsigned();
-		$table->integer('post_id')->unsigned();
-		
-		$table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-		$table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
-	});
-}
-
-# Step 4:
-open Category.php model and write 
-public function posts () {
-	$this->belongstoMany('App\Post');
-}
-open Post.php model and write 
-public function categories () {
-	$this->belongstoMany('App\Category');
-}
-
-```
-
-
 **Model $fillable**
 ```
 In model we add this
