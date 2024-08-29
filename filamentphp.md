@@ -141,3 +141,19 @@ Notification::make()
     ->send();
 
 ```
+**Grid**<br>
+Grid is use to divide page into columns<br>
+```
+return $form
+		->schema([
+                	Forms\Components\Grid::make(2)
+				->schema([
+                        		Forms\Components\Section::make('1st Column')
+                            			->schema([])
+						->columnSpan(1),
+					Forms\Components\Section::make('2nd Column')
+                            			->schema([])
+						->columnSpan(1),
+				]),
+		]),
+```
