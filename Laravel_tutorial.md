@@ -333,6 +333,10 @@ $studentLessonProgresses = StudentLessonProgress::query()
 ->whereRelation('schedule','product_type', '!=', ScheduleProductType::BLOCK->value)
 ->get();
 ```
+**Model $table**
+```
+By default, Laravel expects the table name to be the plural form of the model name (e.g., for a model User, it expects a table named users). If your table name does not match this convention, you need to explicitly define it using the $table property.
+```
 **Model $fillable**
 ```
 In model we add this
