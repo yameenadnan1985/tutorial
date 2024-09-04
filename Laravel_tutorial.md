@@ -284,13 +284,19 @@ protected $appends = [
 ];
 public function getFirstNameAttribute(): string
 {
-        return (string) $this->user->address;
+        return (string) $this->user->first_name;
 }
 public function getAddressAttribute(): string
 {
-        return (string) $this->user->first_name;
+        return (string) $this->user->address;
 }
 ```
+**protected $primarykey**
+```
+By default, Laravel assumes that the primary key column is named id. However, if your database table uses a different column name as the primary key, you need to specify that column name using the $primaryKey property in your model.
+Example: protected $primaryKey = "student_id";
+```
+
 **Collection with Example**<br>
 A collection is an advanced, flexible wrapper around arrays of data<br>
 When you retrieve data from the database using Eloquent, Laravel automatically wraps the result in a collection:<br>
