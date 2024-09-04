@@ -85,3 +85,47 @@ recources/views/livewire/my-livewire-component.blade.php
 <button wire:click.prevent="handleClick"></button>
 </form>
 ```
+**Common livewire Directives**
+```
+wire:model // for input
+wire:click // for button
+wire:click.prevent // for button
+wire:submit.prevent // for form
+wire:keydown // keypress
+wire:keydown.enter // enter key press
+wire:keydown.escape // escape key press
+wire:loading
+<button wire:click="save">
+    Save
+</button>
+<span wire:loading>Saving...</span>
+wire:poll // Like setTimeOut and ajax
+<div wire:poll.5s="refreshData">
+    <p>Latest Data: {{ $data }}</p>
+</div>
+
+wire:key
+- Helps identify a DOM element uniquely within a loop, avoiding potential issues when re-rendering.
+
+Example:
+@foreach($items as $item)
+    <div wire:key="item-{{ $item->id }}">
+        {{ $item->name }}
+    </div>
+@endforeach
+This ensures that each item in the loop is uniquely identified, preventing re-rendering issues.
+
+wire:model.lazy = blur
+Updates the component property only when the input loses focus, instead of on every keystroke.
+
+Example:
+<input type="text" wire:model.lazy="name">
+The `name` property is updated only when the input field loses focus.
+
+wire:model.debounce
+Debounces updates to the component property, only sending updates after the user has stopped typing for a specified duration.
+
+Example:
+<input type="text" wire:model.debounce.500ms="name">
+The `name` property is updated 500ms after the user stops typing.
+```
