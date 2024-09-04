@@ -11,3 +11,10 @@ It will generate 2 files
 App/Livewire/PrimeHoursWidget.php
 resources/views/livewire/prime-hours-widget.blade.php
 ```
+**Display Livewire Component**
+```
+In the view add like this
+@livewire('my-livewire-component');
+or
+<livewire:my-livewire-component />
+```
