@@ -18,7 +18,7 @@ In the view add like this
 or
 <livewire:my-livewire-component />
 ```
-**Click Event**
+**Click Event wire:click**
 ```
 // View is located in recources/views/livewire/my-livewire-component.blade.php
 <div>
@@ -32,4 +32,16 @@ public function handleClick(): void
 {
   dd('Test');
 }
+```
+**Saving values from Livewire View into DB wire:model**
+```
+App/Livewire/MyLivewireComponent.php
+public $name;
+public $email;
+public $password;
+
+recources/views/livewire/my-livewire-component.blade.php
+<input wire:model="name" type="text" id="name" name="name" />
+<input wire:model="email" type="text" id="email" name="email" />
+<input wire:model="password" type="text" id="password" name="password" />
 ```
