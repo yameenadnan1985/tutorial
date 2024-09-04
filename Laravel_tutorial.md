@@ -259,6 +259,22 @@ public function lessons(): HasManyThrough
 	return $this->hasManyThrough(Lesson::class, StudentLessonProgress::class, 'student_id', 'lesson_id', 'student_id', 'lesson_id');
 }
 ```
+**protected static function booted()**<br>
+If we want to set column value during insertion without setting each time we insert record we can use below
+```
+protected static function booted()
+{
+	self::creating(function ($model) {
+	    $userId = auth()->user()->id;
+	    $model->entry_by = $userId;
+	    $model->update_by = $userId;
+	});
+	
+	self::updating(function ($model) {
+	    $model->update_by = auth()->user()->id;
+	});
+}
+```
 **Disable timestamps**
 ```
 public $timestamps = false;
