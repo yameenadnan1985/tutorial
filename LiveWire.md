@@ -41,7 +41,10 @@ public $email;
 public $password;
 
 recources/views/livewire/my-livewire-component.blade.php
+<form>
 <input wire:model="name" type="text" id="name" name="name" />
 <input wire:model="email" type="text" id="email" name="email" />
 <input wire:model="password" type="text" id="password" name="password" />
+<button wire:click.prevent="handleClick"></button>
+</form>
 ```
