@@ -18,7 +18,7 @@ In the view add like this
 or
 <livewire:my-livewire-component />
 ```
-**Livewire View**
+**Click Event**
 ```
 // View is located in recources/views/livewire/my-livewire-component.blade.php
 <div>
