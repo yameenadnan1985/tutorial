@@ -48,3 +48,23 @@ recources/views/livewire/my-livewire-component.blade.php
 <button wire:click.prevent="handleClick"></button>
 </form>
 ```
+**Form Validation**
+```
+App/Livewire/MyLivewireComponent.php
+public $name;
+public $email;
+public $password;
+public function handleClick(): void
+{
+  $this->validate(
+    'name' => 'required|min:10',
+    'email' => 'required|email',
+    'password' => 'required'
+  );
+  User::create([
+    'name' => $this->name,
+    'email' => $this->email,
+    'password' => $this->password
+  ]);
+}
+```
