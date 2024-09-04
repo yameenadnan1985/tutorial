@@ -18,3 +18,18 @@ In the view add like this
 or
 <livewire:my-livewire-component />
 ```
+**Livewire View**
+```
+// View is located in recources/views/livewire/my-livewire-component.blade.php
+<div>
+<button wire:click="handleClick">
+Click Me
+</button>
+</div>
+App/Livewire/MyLivewireComponent.php
+
+public function handleClick(): void
+{
+  dd('Test');
+}
+```
