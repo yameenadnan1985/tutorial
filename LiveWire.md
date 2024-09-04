@@ -67,4 +67,21 @@ public function handleClick(): void
     'password' => $this->password
   ]);
 }
+
+recources/views/livewire/my-livewire-component.blade.php
+<form>
+<input wire:model="name" type="text" id="name" name="name" />
+@error('name')
+  {{$message}}
+@enderror
+<input wire:model="email" type="text" id="email" name="email" />
+@error('email')
+  {{$message}}
+@enderror
+<input wire:model="password" type="text" id="password" name="password" />
+@error('password')
+  {{$message}}
+@enderror
+<button wire:click.prevent="handleClick"></button>
+</form>
 ```
