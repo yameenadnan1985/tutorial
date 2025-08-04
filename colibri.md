@@ -1,5 +1,5 @@
 To follow steps i assume you already have installed/configured docker. github
-**Pull image and start docker from image**dssdfsdfsfsdfddf
+**Pull image and start docker from image**
 ```
 $ docker login 
 Username: yameen671
