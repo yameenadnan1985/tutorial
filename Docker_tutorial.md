@@ -6,7 +6,7 @@ Docker is open platform for developers to build, ship and run containerized appl
 **Container**
 ```
 container = object of class
-# To check all running containers
+# To check all running containers. git commit test
 $ docker ps 
 
 # To Check all running and stop containers do this
